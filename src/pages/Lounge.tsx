@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
@@ -14,30 +13,30 @@ const Lounge = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   
-  // Gallery images
+  // Gallery images - Updated with user-provided images
   const loungeImages = [
     {
-      src: "https://images.unsplash.com/photo-1513553404607-988bf2703777?q=80&w=2069&auto=format&fit=crop",
+      src: "/img_1.jpg",
       alt: "Уютный интерьер Bobsonm Lounge"
     },
     {
-      src: "https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=2070&auto=format&fit=crop",
+      src: "/img_2.jpg",
       alt: "Барная стойка Bobsonm Lounge"
     },
     {
-      src: "https://images.unsplash.com/photo-1548364535-f7dae954f30e?q=80&w=2071&auto=format&fit=crop",
+      src: "/img_3.jpg",
       alt: "Зона отдыха Bobsonm Lounge"
     },
     {
-      src: "https://images.unsplash.com/photo-1515516089376-88db1e26e9c0?q=80&w=1169&auto=format&fit=crop",
+      src: "/img_4.jpg", 
       alt: "VIP-зона Bobsonm Lounge"
     },
     {
-      src: "https://images.unsplash.com/photo-1518537878376-5a9d8d617fad?q=80&w=1170&auto=format&fit=crop",
+      src: "/img_5.jpg",
       alt: "Атмосфера в Bobsonm Lounge"
     },
     {
-      src: "https://images.unsplash.com/photo-1568644396922-5c3bfae12220?q=80&w=1170&auto=format&fit=crop",
+      src: "/img_6.jpg",
       alt: "Кальяны в Bobsonm Lounge"
     }
   ];
@@ -108,7 +107,7 @@ const Lounge = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={600} direction="up">
-            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 text-white/90 max-w-3xl mx-auto">
+            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 text-white max-w-3xl mx-auto">
               Расслабьтесь в атмосфере изысканного комфорта
             </h2>
           </AnimatedSection>
@@ -131,7 +130,7 @@ const Lounge = () => {
           <AnimatedSection direction="right">
             <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
               <img 
-                src="https://images.unsplash.com/photo-1504284401809-2d78624be027?q=80&w=2070&auto=format&fit=crop" 
+                src="/img_1.jpg"
                 alt="Атмосфера Bobsonm Lounge" 
                 className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700"
               />
@@ -140,12 +139,12 @@ const Lounge = () => {
           
           <AnimatedSection direction="left">
             <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">О нашем Lounge</h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white mb-6">
               Bobsonm Lounge — это уникальное пространство, где сочетаются стильный дизайн, 
               мягкий свет и приятная музыка. Здесь вы можете расслабиться после напряженного дня, 
               насладиться премиальными кальянами и изысканными напитками.
             </p>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white mb-8">
               Наш лаундж — идеальное место для встречи с друзьями, романтического вечера или 
               деловой беседы в непринужденной обстановке. Опытные кальянные мастера и внимательный 
               персонал создадут для вас атмосферу безупречного комфорта.
@@ -154,20 +153,20 @@ const Lounge = () => {
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Clock className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-muted-foreground">Работаем ежедневно</span>
+                <span className="text-sm text-white">Работаем ежедневно</span>
                 <span className="font-medium">13:00 - 01:00</span>
                 <span className="text-xs text-bobsonm-gold mt-1">Пт-Сб до 03:00</span>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Music className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-muted-foreground">Mafia</span>
+                <span className="text-sm text-white">Mafia</span>
                 <span className="font-medium">Игры по расписанию</span>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Users className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-muted-foreground">До 100 гостей</span>
+                <span className="text-sm text-white">До 100 гостей</span>
                 <span className="font-medium">Уютные зоны</span>
               </div>
             </div>
@@ -180,7 +179,7 @@ const Lounge = () => {
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
             <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Меню</h3>
-            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
               Насладитесь нашей авторской кухней, изысканными напитками и премиальными кальянами
             </p>
           </AnimatedSection>
@@ -195,7 +194,7 @@ const Lounge = () => {
       <section className="py-20 bobsonm-container px-4">
         <AnimatedSection direction="up">
           <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Галерея</h3>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
             Погрузитесь в атмосферу Bobsonm Lounge
           </p>
         </AnimatedSection>
@@ -208,7 +207,7 @@ const Lounge = () => {
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
             <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Акции и бонусы</h3>
-            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
               Специальные предложения для наших гостей
             </p>
           </AnimatedSection>
@@ -218,7 +217,7 @@ const Lounge = () => {
               <AnimatedSection key={index} direction="up" delay={200 * index}>
                 <div className="glass-panel p-6 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                   <h4 className="font-semibold text-xl mb-2 text-bobsonm-gold">{promo.title}</h4>
-                  <p className="text-muted-foreground mb-4">{promo.description}</p>
+                  <p className="text-white mb-4">{promo.description}</p>
                   <div className="flex items-center mt-auto">
                     <Calendar size={16} className="text-bobsonm-gold" />
                     <span className="text-sm ml-2">{promo.period}</span>
@@ -245,7 +244,7 @@ const Lounge = () => {
       <section className="py-20 bobsonm-container px-4">
         <AnimatedSection direction="up">
           <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Контакты</h3>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
             Забронируйте стол в Bobsonm Lounge
           </p>
         </AnimatedSection>

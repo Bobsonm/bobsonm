@@ -17,31 +17,31 @@ const Mafia = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   
-  // Gallery images
+  // Gallery images - Updated with user-provided images
   const mafiaImages = [
     {
-      src: "https://images.unsplash.com/photo-1618221710640-c0eaaa2adb49?q=80&w=1932&auto=format&fit=crop",
+      src: "/img_1.jpg",
+      alt: "Атмосфера в Bobsonm Mafia"
+    },
+    {
+      src: "/img_2.jpg",
+      alt: "Уютная обстановка для игры в мафию"
+    },
+    {
+      src: "/img_3.jpg",
+      alt: "Интерьер Bobsonm Mafia"
+    },
+    {
+      src: "/img_7.jpg", 
       alt: "Игра в мафию в Bobsonm Mafia"
     },
     {
-      src: "https://images.unsplash.com/photo-1505373877841-8d25f7d46678?q=80&w=2012&auto=format&fit=crop",
+      src: "/img_8.jpg",
       alt: "Участники игры в мафию"
     },
     {
-      src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop",
+      src: "/img_9.jpg",
       alt: "Компания друзей в Bobsonm Mafia"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=2069&auto=format&fit=crop",
-      alt: "Обсуждение в игре Мафия"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1594815076796-7fac211a2a14?q=80&w=1974&auto=format&fit=crop",
-      alt: "Эмоции игроков мафии"
-    },
-    {
-      src: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=2069&auto=format&fit=crop",
-      alt: "Друзья на игре в Bobsonm Mafia"
     }
   ];
   
@@ -77,7 +77,7 @@ const Mafia = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: "url(https://images.unsplash.com/photo-1613102778924-1e44e5f2f4ba?q=80&w=1170&auto=format&fit=crop)",
+            backgroundImage: "url(/img_7.jpg)",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/70 via-bobsonm-black/50 to-bobsonm-black" />
@@ -91,7 +91,7 @@ const Mafia = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={600} direction="up">
-            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 text-white/90 max-w-3xl mx-auto">
+            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 text-white max-w-3xl mx-auto">
               Интеллектуальная игра с атмосферой загадки и азарта
             </h2>
           </AnimatedSection>
@@ -115,13 +115,13 @@ const Mafia = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AnimatedSection direction="right" className="order-2 lg:order-1">
             <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">О клубе Мафии</h3>
-            <p className="text-muted-foreground mb-6">
+            <p className="text-white mb-6">
               Bobsonm Mafia — это клуб для ценителей интеллектуальной игры, где логика, 
               актерское мастерство и интуиция помогают раскрыть все тайны ночного города. 
               У нас играют как опытные мафиози, так и новички, желающие погрузиться в мир детективных 
               загадок.
             </p>
-            <p className="text-muted-foreground mb-8">
+            <p className="text-white mb-8">
               Каждая игра — это уникальный опыт, наполненный эмоциями, стратегиями и неожиданными 
               поворотами сюжета. Профессиональные ведущие следят за соблюдением правил и создают 
               незабываемую атмосферу, а уютное пространство позволяет полностью погрузиться в игру.
@@ -141,7 +141,7 @@ const Mafia = () => {
           <AnimatedSection direction="left" className="order-1 lg:order-2">
             <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
               <img 
-                src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=2071&auto=format&fit=crop" 
+                src="/img_8.jpg" 
                 alt="Клуб Bobsonm Mafia" 
                 className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700"
               />
@@ -155,7 +155,7 @@ const Mafia = () => {
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
             <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Преимущества клуба</h3>
-            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
               Что делает Bobsonm Mafia особенным местом для игры
             </p>
           </AnimatedSection>
@@ -169,8 +169,8 @@ const Mafia = () => {
                       {benefit.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold mb-2">{benefit.title}</h4>
-                      <p className="text-muted-foreground">{benefit.description}</p>
+                      <h4 className="font-semibold mb-2 text-white">{benefit.title}</h4>
+                      <p className="text-white/80">{benefit.description}</p>
                     </div>
                   </div>
                 </div>
@@ -180,11 +180,11 @@ const Mafia = () => {
         </div>
       </section>
       
-      {/* Gallery section */}
+      {/* Gallery section - Updated with user's images */}
       <section className="py-20 bobsonm-container px-4">
         <AnimatedSection direction="up">
           <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Фотогалерея</h3>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
             Моменты игры и эмоции наших гостей
           </p>
         </AnimatedSection>

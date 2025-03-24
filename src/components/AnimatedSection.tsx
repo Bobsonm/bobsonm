@@ -6,7 +6,7 @@ interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
-  direction?: "up" | "down" | "left" | "right" | "none";
+  direction?: "up" | "down" | "left" | "right" | "none" | "scale" | "rotate";
   duration?: number;
   once?: boolean;
   threshold?: number;
