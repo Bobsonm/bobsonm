@@ -5,6 +5,7 @@ import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
 import { MenuScans } from "@/components/MenuScans";
 import { YandexMap } from "@/components/YandexMap";
+import { VipRoomCarousel } from "@/components/VipRoomCarousel";
 import { Separator } from "@/components/ui/separator";
 import { Clock, MapPin, Phone, Aperture, CircleDollarSign, Music } from "lucide-react";
 
@@ -54,38 +55,50 @@ const Billiards = () => {
     }
   ];
   
-  // VIP room images
+  // VIP room images - новые фотографии
   const vipRoomImages = [
     {
-      src: "/lovable-uploads/e8355c5d-a4e4-4b5a-87ef-4389ea8de876.png",
-      alt: "Игрок выполняет удар на бильярдном столе"
+      src: "/lovable-uploads/27a640d9-e58d-4f74-a294-d27888724c3b.png",
+      alt: "VIP-комната бильярда с зеленым столом и серебристыми шторами"
     },
     {
-      src: "/lovable-uploads/d57ffdb4-783e-4130-8b3e-6dfb8b5eb152.png",
-      alt: "Профессиональный бильярдный стол Aramith"
+      src: "/lovable-uploads/6951aa59-61bc-4ace-90a7-bf6ea6c0b473.png",
+      alt: "Зона отдыха VIP-комнаты с телевизором и логотипом Bobsonm Lounge"
+    },
+    {
+      src: "/lovable-uploads/ce886aaf-2e5d-4f3d-b64b-86a16d208661.png",
+      alt: "Бильярдный стол в VIP-комнате с подставкой для шаров"
+    },
+    {
+      src: "/lovable-uploads/68dde539-1a15-47d9-ade7-1fe6a8ad4dba.png",
+      alt: "Зона отдыха с мятным диваном в VIP-комнате"
+    },
+    {
+      src: "/lovable-uploads/f0375c61-2d59-4250-ad17-53e931e8d1fc.png",
+      alt: "Обеденный стол в VIP-комнате с креслами"
+    },
+    {
+      src: "/lovable-uploads/d08d6f51-e968-4d74-b324-e89fec7a597a.png",
+      alt: "Панорамный вид VIP-комнаты с бильярдным столом и зоной отдыха"
     }
   ];
   
-  // Menu scans example
+  // Menu scans с новыми фотографиями
   const menuScans = [
     {
       value: "food",
       label: "Еда",
       images: [
-        "https://images.unsplash.com/photo-1562059392-096cd0b8cce5?q=80&w=1019&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1574484284002-9ac39bcb3327?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1627563252940-fbf7e4a29923?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=987&auto=format&fit=crop"
+        "/lovable-uploads/1bc1845a-c090-4ea1-a273-03b2823a895e.png",
+        "/lovable-uploads/33209257-0094-419f-b22f-31e3fe91ffd6.png"
       ]
     },
     {
       value: "bar",
       label: "Бар",
       images: [
-        "https://images.unsplash.com/photo-1605270012917-bf357a1a2908?q=80&w=1036&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1606767417424-5377577ecce9?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1603569283847-aa295f0d481a?q=80&w=987&auto=format&fit=crop"
+        "/lovable-uploads/7e6063fd-6da6-4af7-82db-6af4a3bd58ae.png",
+        "/lovable-uploads/9eb1e4c9-99f6-437d-b780-ad0fd403fafc.png"
       ]
     }
   ];
@@ -263,11 +276,7 @@ const Billiards = () => {
         </AnimatedSection>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AnimatedSection direction="right">
-            <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
-              <Gallery images={vipRoomImages} columns={1} gap="md" className="rounded-lg" />
-            </div>
-          </AnimatedSection>
+          <VipRoomCarousel images={vipRoomImages} />
           
           <AnimatedSection direction="left">
             <div className="glass-panel p-8 rounded-lg border border-bobsonm-navy/30">
@@ -416,7 +425,7 @@ const Billiards = () => {
           </AnimatedSection>
           
           <AnimatedSection direction="left" delay={400}>
-            <YandexMap src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=2924377283" />
+            <YandexMap src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=49034132925" />
           </AnimatedSection>
         </div>
       </section>
@@ -425,4 +434,3 @@ const Billiards = () => {
 };
 
 export default Billiards;
-
