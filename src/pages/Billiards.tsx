@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
@@ -13,55 +14,55 @@ const Billiards = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, []);
   
-  // Gallery images - Updated with user-provided images
+  // Gallery images with uploaded photos
   const billiardsImages = [
     {
-      src: "/img_10.jpg",
-      alt: "Бильярдные столы в Bobsonm Бильярд"
+      src: "/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png",
+      alt: "Бильярдный стол с черной обивкой стен"
     },
     {
-      src: "/img_11.jpg",
-      alt: "Игра в бильярд"
+      src: "/lovable-uploads/4b707d43-5bd5-436a-943e-b533a4db2de4.png",
+      alt: "Бильярдный стол с баром на заднем плане"
     },
     {
-      src: "/img_12.jpg",
-      alt: "Стойка бильярдного клуба"
+      src: "/lovable-uploads/36b319f4-c238-409c-9610-7d79e8c05d1a.png", 
+      alt: "Бильярдные столы в ряд в клубе"
     },
     {
-      src: "/img_13.jpg",
-      alt: "Интерьер бильярдного клуба"
+      src: "/lovable-uploads/048c473d-0c52-45f1-8147-fe16cd73fa2f.png",
+      alt: "Бильярдный стол с трансляцией футбольного матча"
     },
     {
-      src: "/img_14.jpg",
-      alt: "Бильярдные столы"
+      src: "/lovable-uploads/047b9f33-11c4-4676-9a94-daa27cf66dba.png",
+      alt: "Бильярдный стол с подготовленными шарами"
     },
     {
-      src: "/img_15.jpg",
-      alt: "Игра в американский пул"
+      src: "/lovable-uploads/18e9236a-ddc9-4b00-9061-fc8a12af28b4.png",
+      alt: "VIP-комната Bobsonm Lounge"
     },
     {
-      src: "/img_16.jpg",
-      alt: "Профессиональный бильярдный стол"
+      src: "/lovable-uploads/073146e8-304f-4eb1-a4eb-53286a1b96a3.png",
+      alt: "Зона отдыха в бильярдном клубе"
     },
     {
-      src: "/img_17.jpg",
-      alt: "Бильярдный клуб ночью"
+      src: "/lovable-uploads/6386dc36-82f6-4e13-8fd4-771738e580c3.png",
+      alt: "Бильярдный стол с серебристыми шторами"
     },
     {
-      src: "/img_18.jpg",
-      alt: "Интерьер Bobsonm Бильярд"
+      src: "/lovable-uploads/94176a12-55ba-42b2-9638-4c222fb42771.png",
+      alt: "Бильярдный стол с tufted стеной"
     }
   ];
   
-  // VIP room images - Updated with user-provided images
+  // VIP room images
   const vipRoomImages = [
     {
-      src: "/img_19.jpg",
-      alt: "VIP-комната Bobsonm Бильярд"
+      src: "/lovable-uploads/e8355c5d-a4e4-4b5a-87ef-4389ea8de876.png",
+      alt: "Игрок выполняет удар на бильярдном столе"
     },
     {
-      src: "/img_20.jpg",
-      alt: "Зона отдыха VIP-комнаты"
+      src: "/lovable-uploads/d57ffdb4-783e-4130-8b3e-6dfb8b5eb152.png",
+      alt: "Профессиональный бильярдный стол Aramith"
     }
   ];
   
@@ -95,7 +96,7 @@ const Billiards = () => {
       type: "Русский бильярд",
       count: 8,
       description: "Профессиональные 12-футовые столы с итальянским сукном высшего качества",
-      features: "Идеально вывер��нная геометрия, рассеянное освещение"
+      features: "Идеально выверенная геометрия, рассеянное освещение"
     },
     {
       type: "Американский пул",
@@ -143,7 +144,7 @@ const Billiards = () => {
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ 
-            backgroundImage: "url(/img_10.jpg)",
+            backgroundImage: "url(/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png)",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/70 via-bobsonm-black/50 to-bobsonm-black" />
@@ -180,7 +181,7 @@ const Billiards = () => {
           <AnimatedSection direction="right">
             <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
               <img 
-                src="/img_11.jpg" 
+                src="/lovable-uploads/4b707d43-5bd5-436a-943e-b533a4db2de4.png" 
                 alt="Бильярдный клуб Bobsonm" 
                 className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700"
               />
@@ -204,20 +205,20 @@ const Billiards = () => {
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Clock className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-white">Время работы</span>
-                <span className="font-medium">Будни: 14:00-03:00</span>
+                <span className="font-medium text-white">Будни: 14:00-03:00</span>
                 <span className="text-xs text-bobsonm-gold mt-1">Пт-Вс: 13:00-03:00</span>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Aperture className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-white">Всего столов</span>
-                <span className="font-medium">10 + VIP комната</span>
+                <span className="font-medium text-white">10 + VIP комната</span>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Music className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-white">VIP-комната</span>
-                <span className="font-medium">С караоке</span>
+                <span className="font-medium text-white">С караоке</span>
               </div>
             </div>
           </AnimatedSection>
@@ -243,8 +244,8 @@ const Billiards = () => {
                     <span className="text-3xl font-semibold text-white">{table.count}</span>
                     <span className="text-white ml-2">{table.count === 1 ? 'стол' : 'столов'}</span>
                   </div>
-                  <p className="text-white/80 mb-4">{table.description}</p>
-                  <p className="text-white/80 text-sm border-t border-bobsonm-navy/30 pt-4 mt-4">{table.features}</p>
+                  <p className="text-white mb-4">{table.description}</p>
+                  <p className="text-white text-sm border-t border-bobsonm-navy/30 pt-4 mt-4">{table.features}</p>
                 </div>
               </AnimatedSection>
             ))}
@@ -373,7 +374,7 @@ const Billiards = () => {
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Телефон для бронирования</h4>
+                  <h4 className="font-medium text-white">Телефон для бронирования</h4>
                   <a href="tel:+74959089245" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
                     +7 (495) 908-92-45
                   </a>
@@ -385,8 +386,8 @@ const Billiards = () => {
               <div className="flex items-center mb-6">
                 <Clock size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Время работы</h4>
-                  <p>Будни с 14:00 до 03:00</p>
+                  <h4 className="font-medium text-white">Время работы</h4>
+                  <p className="text-white">Будни с 14:00 до 03:00</p>
                   <p className="text-sm text-bobsonm-gold">Пт-Вс с 13:00 до 03:00</p>
                 </div>
               </div>
@@ -396,8 +397,8 @@ const Billiards = () => {
               <div className="flex items-center">
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Адрес</h4>
-                  <p>Москва, Братиславская улица, 27, корп. 1</p>
+                  <h4 className="font-medium text-white">Адрес</h4>
+                  <p className="text-white">Москва, Братиславская улица, 27, корп. 1</p>
                 </div>
               </div>
               
@@ -424,3 +425,4 @@ const Billiards = () => {
 };
 
 export default Billiards;
+

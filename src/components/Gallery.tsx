@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { cn } from "@/lib/utils";
@@ -47,7 +48,7 @@ export function Gallery({
       <div className={cn("grid", columnClasses[columns], gapClasses[gap], className)}>
         {images.map((image, index) => <AnimatedSection key={index} className="image-hover" delay={100 * index} once={true}>
             <button className="block w-full h-full cursor-zoom-in" onClick={() => handleImageClick(image)}>
-              <img src={image.src} alt={image.alt} width={image.width || 400} height={image.height || 300} loading="lazy" className="object-contain" />
+              <img src={image.src} alt={image.alt} width={image.width || 400} height={image.height || 300} loading="lazy" className={cn("w-full h-full object-cover", roundedClasses[rounded])} />
             </button>
           </AnimatedSection>)}
       </div>
