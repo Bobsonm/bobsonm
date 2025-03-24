@@ -3,8 +3,10 @@ import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
+import { MenuScans } from "@/components/MenuScans";
+import { YandexMap } from "@/components/YandexMap";
 import { Separator } from "@/components/ui/separator";
-import { Phone, Calendar, Clock, MapPin, Music, Users } from "lucide-react";
+import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
 
 const Lounge = () => {
   useEffect(() => {
@@ -40,36 +42,26 @@ const Lounge = () => {
     }
   ];
   
-  // Menu categories
-  const menuCategories = [
+  // Menu scans example - replace with actual menu images
+  const menuScans = [
     {
-      title: "Кухня",
-      items: [
-        { name: "Брускетта с ростбифом", description: "Ростбиф, руккола, томаты черри, соус", price: "590 ₽" },
-        { name: "Тартар из тунца", description: "Тунец, авокадо, цитрусовая заправка", price: "720 ₽" },
-        { name: "Цезарь с курицей", description: "Куриное филе, салат ромэн, гренки, пармезан", price: "590 ₽" },
-        { name: "Паста карбонара", description: "Спагетти, бекон, желток, пармезан", price: "620 ₽" },
-        { name: "Медальоны из говядины", description: "Говяжья вырезка, овощи гриль, соус демиглас", price: "1290 ₽" }
+      value: "food",
+      label: "Еда",
+      images: [
+        "https://images.unsplash.com/photo-1562059392-096cd0b8cce5?q=80&w=1019&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=987&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1627563252940-fbf7e4a29923?q=80&w=987&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=987&auto=format&fit=crop"
       ]
     },
     {
-      title: "Бар",
-      items: [
-        { name: "Aperol Spritz", description: "Aperol, просекко, содовая", price: "490 ₽" },
-        { name: "Negroni", description: "Джин, кампари, красный вермут", price: "520 ₽" },
-        { name: "Old Fashioned", description: "Бурбон, сахарный сироп, биттер", price: "550 ₽" },
-        { name: "Bobsonm Special", description: "Авторский коктейль от нашего бармена", price: "580 ₽" },
-        { name: "Лимонад Маракуйя", description: "Безалкогольный лимонад с маракуйей", price: "280 ₽" }
-      ]
-    },
-    {
-      title: "Кальяны",
-      items: [
-        { name: "Легкий", description: "Классический кальян средней крепости", price: "1600 ₽" },
-        { name: "Premium", description: "Кальян на премиальном табаке", price: "2200 ₽" },
-        { name: "Фруктовый", description: "Кальян на грейпфруте или ананасе", price: "2800 ₽" },
-        { name: "Авторский", description: "Фирменный кальян от нашего кальянного мастера", price: "3200 ₽" },
-        { name: "Замена чаши", description: "Дополнительная чаша любого вкуса", price: "800 ₽" }
+      value: "bar-hookah",
+      label: "Бар и Кальян",
+      images: [
+        "https://images.unsplash.com/photo-1605270012917-bf357a1a2908?q=80&w=1036&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=987&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1606767417424-5377577ecce9?q=80&w=987&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1603569283847-aa295f0d481a?q=80&w=987&auto=format&fit=crop"
       ]
     }
   ];
@@ -78,18 +70,19 @@ const Lounge = () => {
   const promotions = [
     {
       title: "Happy Hours",
-      description: "Скидка 20% на все напитки в будни с 17:00 до 19:00",
-      period: "Ежедневно"
+      description: "Скидка 20% на весь чек по будням с 13:00 до 16:00",
+      period: "По будням"
+    },
+    {
+      title: "Бонусная программа",
+      description: "300 бонусных баллов за регистрацию в системе лояльности",
+      period: "При регистрации",
+      link: "https://app.samosale.ru/BobsonmLounge"
     },
     {
       title: "День рождения",
-      description: "Фирменный коктейль в подарок имениннику и скидка 10% на общий счет",
+      description: "В день рождения и 3 дня после -10% на весь счет",
       period: "В день рождения и 3 дня после"
-    },
-    {
-      title: "Кальянный четверг",
-      description: "Каждый четверг скидка 15% на все кальяны",
-      period: "По четвергам"
     }
   ];
 
@@ -109,7 +102,7 @@ const Lounge = () => {
         {/* Content */}
         <div className="relative bobsonm-container text-center z-10 px-4">
           <AnimatedSection delay={300}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 animate-text-shine">
               Bobsonm <span className="text-bobsonm-gold">Lounge</span>
             </h1>
           </AnimatedSection>
@@ -136,7 +129,7 @@ const Lounge = () => {
       <section className="bobsonm-container py-20 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AnimatedSection direction="right">
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
               <img 
                 src="https://images.unsplash.com/photo-1504284401809-2d78624be027?q=80&w=2070&auto=format&fit=crop" 
                 alt="Атмосфера Bobsonm Lounge" 
@@ -146,7 +139,7 @@ const Lounge = () => {
           </AnimatedSection>
           
           <AnimatedSection direction="left">
-            <h3 className="text-3xl font-serif font-semibold mb-6">О нашем Lounge</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">О нашем Lounge</h3>
             <p className="text-muted-foreground mb-6">
               Bobsonm Lounge — это уникальное пространство, где сочетаются стильный дизайн, 
               мягкий свет и приятная музыка. Здесь вы можете расслабиться после напряженного дня, 
@@ -159,21 +152,22 @@ const Lounge = () => {
             </p>
             
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg">
+              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Clock className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-muted-foreground">Работаем ежедневно</span>
-                <span className="font-medium">с 14:00 до 02:00</span>
+                <span className="font-medium">13:00 - 01:00</span>
+                <span className="text-xs text-bobsonm-gold mt-1">Пт-Сб до 03:00</span>
               </div>
               
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg">
+              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Music className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-muted-foreground">DJ-сеты</span>
-                <span className="font-medium">Пт-Сб с 20:00</span>
+                <span className="text-sm text-muted-foreground">Mafia</span>
+                <span className="font-medium">Игры по расписанию</span>
               </div>
               
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg">
+              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Users className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-muted-foreground">До 80 гостей</span>
+                <span className="text-sm text-muted-foreground">До 100 гостей</span>
                 <span className="font-medium">Уютные зоны</span>
               </div>
             </div>
@@ -182,34 +176,17 @@ const Lounge = () => {
       </section>
       
       {/* Menu section */}
-      <section className="py-20 bg-bobsonm-navy/10">
+      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Меню</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Меню</h3>
             <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
               Насладитесь нашей авторской кухней, изысканными напитками и премиальными кальянами
             </p>
           </AnimatedSection>
           
-          <div className="max-w-4xl mx-auto">
-            {menuCategories.map((category, categoryIndex) => (
-              <AnimatedSection key={categoryIndex} direction="up" delay={200 * categoryIndex}>
-                <div className="mb-10">
-                  <h4 className="text-2xl font-serif font-medium mb-6 text-bobsonm-gold">{category.title}</h4>
-                  <div className="space-y-6">
-                    {category.items.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex justify-between border-b border-bobsonm-navy/30 pb-4">
-                        <div>
-                          <h5 className="font-medium mb-1">{item.name}</h5>
-                          <p className="text-sm text-muted-foreground">{item.description}</p>
-                        </div>
-                        <div className="text-bobsonm-gold font-medium ml-4">{item.price}</div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
+          <div className="max-w-5xl mx-auto">
+            <MenuScans tabs={menuScans} />
           </div>
         </div>
       </section>
@@ -217,7 +194,7 @@ const Lounge = () => {
       {/* Gallery section */}
       <section className="py-20 bobsonm-container px-4">
         <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Галерея</h3>
+          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Галерея</h3>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Погрузитесь в атмосферу Bobsonm Lounge
           </p>
@@ -227,10 +204,10 @@ const Lounge = () => {
       </section>
       
       {/* Promotions */}
-      <section className="py-20 bg-bobsonm-navy/10">
+      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/15 to-bobsonm-navy/5">
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Акции и бонусы</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Акции и бонусы</h3>
             <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
               Специальные предложения для наших гостей
             </p>
@@ -239,13 +216,24 @@ const Lounge = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {promotions.map((promo, index) => (
               <AnimatedSection key={index} direction="up" delay={200 * index}>
-                <div className="glass-panel p-6 rounded-lg h-full">
+                <div className="glass-panel p-6 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                   <h4 className="font-semibold text-xl mb-2 text-bobsonm-gold">{promo.title}</h4>
                   <p className="text-muted-foreground mb-4">{promo.description}</p>
                   <div className="flex items-center mt-auto">
                     <Calendar size={16} className="text-bobsonm-gold" />
                     <span className="text-sm ml-2">{promo.period}</span>
                   </div>
+                  {promo.link && (
+                    <a 
+                      href={promo.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm"
+                    >
+                      Перейти к регистрации
+                      <ExternalLink size={14} className="ml-2" />
+                    </a>
+                  )}
                 </div>
               </AnimatedSection>
             ))}
@@ -256,15 +244,15 @@ const Lounge = () => {
       {/* Contacts */}
       <section className="py-20 bobsonm-container px-4">
         <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Контакты</h3>
+          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Контакты</h3>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Забронируйте стол в Bobsonm Lounge
           </p>
         </AnimatedSection>
         
-        <div className="max-w-lg mx-auto">
-          <AnimatedSection direction="up" delay={200}>
-            <div className="glass-panel p-8 rounded-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <AnimatedSection direction="right" delay={200}>
+            <div className="glass-panel p-8 rounded-lg border border-bobsonm-navy/30">
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
@@ -278,10 +266,23 @@ const Lounge = () => {
               <Separator className="my-6 bg-bobsonm-navy/30" />
               
               <div className="flex items-center mb-6">
+                <Phone size={24} className="text-bobsonm-gold mr-4" />
+                <div>
+                  <h4 className="font-medium">Телефон управляющего</h4>
+                  <a href="tel:+79671311783" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
+                    +7 (967) 131-17-83
+                  </a>
+                </div>
+              </div>
+              
+              <Separator className="my-6 bg-bobsonm-navy/30" />
+              
+              <div className="flex items-center mb-6">
                 <Clock size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium">Время работы</h4>
-                  <p>Ежедневно с 14:00 до 02:00</p>
+                  <p>Ежедневно с 13:00 до 01:00</p>
+                  <p className="text-sm text-bobsonm-gold">Пятница и суббота до 03:00</p>
                 </div>
               </div>
               
@@ -291,7 +292,7 @@ const Lounge = () => {
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium">Адрес</h4>
-                  <p>Москва, ул. Пушкина, д. 10</p>
+                  <p>Москва, Международная улица 15А</p>
                 </div>
               </div>
               
@@ -306,6 +307,10 @@ const Lounge = () => {
                 </ContactButton>
               </div>
             </div>
+          </AnimatedSection>
+          
+          <AnimatedSection direction="left" delay={400}>
+            <YandexMap src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=2924377283" />
           </AnimatedSection>
         </div>
       </section>

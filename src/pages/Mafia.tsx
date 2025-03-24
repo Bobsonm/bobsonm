@@ -3,8 +3,12 @@ import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
+import { YandexMap } from "@/components/YandexMap";
 import { Separator } from "@/components/ui/separator";
-import { Calendar, Clock, MapPin, Trophy, Star, Shield, Phone, User, Users } from "lucide-react";
+import { 
+  Clock, MapPin, Phone, Star, Calendar, User, 
+  MessageCircle, Heart, Users, Shield
+} from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Mafia = () => {
@@ -41,63 +45,27 @@ const Mafia = () => {
     }
   ];
   
-  // Upcoming games
-  const upcomingGames = [
-    {
-      date: "20 июля",
-      day: "Суббота",
-      time: "19:00",
-      format: "Классическая мафия",
-      spots: "8/10 мест",
-      price: "1200 ₽"
-    },
-    {
-      date: "22 июля",
-      day: "Понедельник",
-      time: "20:00",
-      format: "Мафия для новичков",
-      spots: "5/10 мест",
-      price: "900 ₽"
-    },
-    {
-      date: "24 июля",
-      day: "Среда",
-      time: "19:30",
-      format: "Мафия-мафия",
-      spots: "6/10 мест",
-      price: "1200 ₽"
-    },
-    {
-      date: "27 июля",
-      day: "Суббота",
-      time: "18:00",
-      format: "Тематическая игра",
-      spots: "9/10 мест",
-      price: "1500 ₽"
-    }
-  ];
-  
   // Club benefits
   const benefits = [
     {
-      icon: <Trophy size={24} className="text-bobsonm-gold" />,
-      title: "Профессиональные ведущие",
-      description: "Наши ведущие — опытные игроки, которые создают увлекательную и справедливую игру"
+      icon: <Heart size={24} className="text-bobsonm-gold" />,
+      title: "Уют и атмосфера",
+      description: "Стильный лаунж с мягким светом, удобными диванами и дружелюбной атмосферой — идеальное место, чтобы расслабиться и погрузиться в игру."
     },
     {
       icon: <Star size={24} className="text-bobsonm-gold" />,
-      title: "Уникальные сценарии",
-      description: "Разнообразные форматы игры, от классической мафии до авторских сценариев"
+      title: "Welcome drink и бонусы",
+      description: "Каждому игроку — коктейль \"Последний шанс\" на старте. Часто угощаем клубникой в шоколаде, устраиваем тематические вечера и награждаем активных игроков призами."
     },
     {
       icon: <Shield size={24} className="text-bobsonm-gold" />,
-      title: "Рейтинговая система",
-      description: "Для постоянных игроков ведётся рейтинг, лучшие получают призы и бонусы"
+      title: "Интеллект и интрига",
+      description: "Это не просто игра, а психологическое сражение. Здесь побеждают не самые громкие, а самые умные и внимательные."
     },
     {
       icon: <Users size={24} className="text-bobsonm-gold" />,
-      title: "Дружеское сообщество",
-      description: "Мы формируем сообщество игроков, объединенных страстью к мафии"
+      title: "Живая комьюнити",
+      description: "Наши гости — это люди, которые возвращаются снова и снова. Здесь можно найти как сильных соперников, так и новых друзей."
     }
   ];
 
@@ -117,7 +85,7 @@ const Mafia = () => {
         {/* Content */}
         <div className="relative bobsonm-container text-center z-10 px-4">
           <AnimatedSection delay={300}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 animate-text-shine">
               Bobsonm <span className="text-bobsonm-gold">Mafia</span>
             </h1>
           </AnimatedSection>
@@ -129,13 +97,15 @@ const Mafia = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={900}>
-            <ContactButton 
-              size="lg" 
-              phoneNumber="+7 (967) 131-17-83"
-              className="mt-6"
+            <a
+              href="https://t.me/Bobsonm_lounge"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-md bg-bobsonm-gold text-bobsonm-black hover:bg-bobsonm-goldLight transition-colors px-6 py-3 mt-6 font-medium"
             >
+              <MessageCircle size={20} className="mr-2" />
               Записаться на игру
-            </ContactButton>
+            </a>
           </AnimatedSection>
         </div>
       </section>
@@ -144,7 +114,7 @@ const Mafia = () => {
       <section className="bobsonm-container py-20 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AnimatedSection direction="right" className="order-2 lg:order-1">
-            <h3 className="text-3xl font-serif font-semibold mb-6">О клубе Мафии</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">О клубе Мафии</h3>
             <p className="text-muted-foreground mb-6">
               Bobsonm Mafia — это клуб для ценителей интеллектуальной игры, где логика, 
               актерское мастерство и интуиция помогают раскрыть все тайны ночного города. 
@@ -158,10 +128,10 @@ const Mafia = () => {
             </p>
             
             <Link 
-              to="https://t.me/bobsonm_mafia" 
+              to="https://t.me/Bobsonmafia" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md bg-bobsonm-navy text-white px-4 py-2 font-medium hover:bg-bobsonm-navy/80 transition-colors"
+              className="inline-flex items-center justify-center rounded-md bg-bobsonm-navy border border-bobsonm-navy/50 text-white px-4 py-2 font-medium hover:bg-bobsonm-navy/80 transition-colors"
             >
               <User size={18} className="mr-2" />
               Присоединиться к сообществу
@@ -169,7 +139,7 @@ const Mafia = () => {
           </AnimatedSection>
           
           <AnimatedSection direction="left" className="order-1 lg:order-2">
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
               <img 
                 src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=2071&auto=format&fit=crop" 
                 alt="Клуб Bobsonm Mafia" 
@@ -180,79 +150,11 @@ const Mafia = () => {
         </div>
       </section>
       
-      {/* Schedule section */}
-      <section className="py-20 bg-bobsonm-navy/10">
-        <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Расписание игр</h3>
-            <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-              Предстоящие игры и мероприятия клуба Bobsonm Mafia
-            </p>
-          </AnimatedSection>
-          
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {upcomingGames.map((game, index) => (
-                <AnimatedSection key={index} direction="up" delay={100 * index}>
-                  <div className="glass-panel p-6 rounded-lg">
-                    <div className="flex justify-between mb-4">
-                      <div>
-                        <h4 className="text-xl font-medium">{game.date}</h4>
-                        <p className="text-sm text-muted-foreground">{game.day}, {game.time}</p>
-                      </div>
-                      <div className="text-right">
-                        <span className="text-bobsonm-gold font-medium">{game.price}</span>
-                        <p className="text-sm text-muted-foreground">{game.spots}</p>
-                      </div>
-                    </div>
-                    
-                    <div className="bg-bobsonm-navy/20 py-2 px-4 rounded text-center">
-                      <span className="font-medium">{game.format}</span>
-                    </div>
-                    
-                    <div className="mt-4 text-right">
-                      <ContactButton 
-                        variant="ghost" 
-                        size="sm" 
-                        phoneNumber="+7 (967) 131-17-83"
-                      >
-                        Записаться
-                      </ContactButton>
-                    </div>
-                  </div>
-                </AnimatedSection>
-              ))}
-            </div>
-            
-            <AnimatedSection direction="up" delay={500} className="text-center mt-12">
-              <p className="text-muted-foreground mb-4">
-                Планируете заранее? Уточните полное расписание по телефону
-              </p>
-              <ContactButton phoneNumber="+7 (967) 131-17-83">
-                Узнать расписание
-              </ContactButton>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-      
-      {/* Gallery section */}
-      <section className="py-20 bobsonm-container px-4">
-        <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Фотогалерея</h3>
-          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
-            Моменты игры и эмоции наших гостей
-          </p>
-        </AnimatedSection>
-        
-        <Gallery images={mafiaImages} columns={3} gap="md" />
-      </section>
-      
       {/* Benefits */}
-      <section className="py-20 bg-bobsonm-navy/10">
+      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Преимущества клуба</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Преимущества клуба</h3>
             <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
               Что делает Bobsonm Mafia особенным местом для игры
             </p>
@@ -261,7 +163,7 @@ const Mafia = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {benefits.map((benefit, index) => (
               <AnimatedSection key={index} direction="up" delay={100 * index}>
-                <div className="glass-panel p-6 rounded-lg h-full">
+                <div className="glass-panel p-6 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-all hover:translate-y-[-5px]">
                   <div className="flex items-start">
                     <div className="p-3 bg-bobsonm-navy/20 rounded-full mr-4">
                       {benefit.icon}
@@ -278,18 +180,62 @@ const Mafia = () => {
         </div>
       </section>
       
+      {/* Gallery section */}
+      <section className="py-20 bobsonm-container px-4">
+        <AnimatedSection direction="up">
+          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Фотогалерея</h3>
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Моменты игры и эмоции наших гостей
+          </p>
+        </AnimatedSection>
+        
+        <Gallery images={mafiaImages} columns={3} gap="md" />
+      </section>
+      
+      {/* Telegram community */}
+      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/15 to-bobsonm-navy/5">
+        <div className="bobsonm-container px-4 text-center">
+          <AnimatedSection direction="up">
+            <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">Присоединяйтесь к нам</h3>
+            <p className="text-muted-foreground mb-10 max-w-2xl mx-auto">
+              Все расписание игр, анонсы и общение с сообществом - в нашем Telegram-канале
+            </p>
+          </AnimatedSection>
+          
+          <AnimatedSection direction="scale" delay={300}>
+            <div className="glass-panel p-8 rounded-lg max-w-md mx-auto border-2 border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-all transform hover:scale-105">
+              <div className="mb-4">
+                <MessageCircle size={40} className="text-bobsonm-gold mx-auto" />
+              </div>
+              <h4 className="text-xl font-semibold mb-2">Telegram-канал Bobsonm Mafia</h4>
+              <p className="text-muted-foreground mb-6">
+                Узнавайте первыми о расписании, акциях и новостях нашего клуба
+              </p>
+              <a
+                href="https://t.me/Bobsonmafia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center rounded-md bg-bobsonm-gold text-bobsonm-black px-4 py-2 font-medium hover:bg-bobsonm-goldLight transition-colors w-full"
+              >
+                Подписаться на канал
+              </a>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+      
       {/* Contacts */}
       <section className="py-20 bobsonm-container px-4">
         <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center">Контакты</h3>
+          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Контакты</h3>
           <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
             Запишитесь на игру в Bobsonm Mafia
           </p>
         </AnimatedSection>
         
-        <div className="max-w-lg mx-auto">
-          <AnimatedSection direction="up" delay={200}>
-            <div className="glass-panel p-8 rounded-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <AnimatedSection direction="right" delay={200}>
+            <div className="glass-panel p-8 rounded-lg border border-bobsonm-navy/30">
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
@@ -306,7 +252,7 @@ const Mafia = () => {
                 <Clock size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium">Время проведения игр</h4>
-                  <p>По расписанию, обычно с 19:00 до 23:00</p>
+                  <p>С 19:30 до 00:00</p>
                 </div>
               </div>
               
@@ -316,21 +262,26 @@ const Mafia = () => {
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium">Адрес</h4>
-                  <p>Москва, ул. Пушкина, д. 10</p>
+                  <p>Москва, Международная улица 15А</p>
                 </div>
               </div>
               
               <div className="mt-8 text-center">
-                <ContactButton 
-                  size="lg" 
-                  variant="primary" 
-                  phoneNumber="+7 (967) 131-17-83" 
-                  className="w-full"
+                <a
+                  href="https://t.me/Bobsonm_lounge"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-md bg-bobsonm-gold text-bobsonm-black px-6 py-3 font-medium hover:bg-bobsonm-goldLight transition-colors w-full"
                 >
+                  <MessageCircle size={20} className="mr-2" />
                   Записаться на игру
-                </ContactButton>
+                </a>
               </div>
             </div>
+          </AnimatedSection>
+          
+          <AnimatedSection direction="left" delay={400}>
+            <YandexMap src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=2924377283" />
           </AnimatedSection>
         </div>
       </section>

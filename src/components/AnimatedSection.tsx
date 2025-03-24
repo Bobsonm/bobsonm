@@ -76,11 +76,17 @@ export function AnimatedSection({
     case "none":
       initialStyles = "opacity-0";
       break;
+    case "scale":
+      initialStyles = "opacity-0 scale-95";
+      break;
+    case "rotate":
+      initialStyles = "opacity-0 rotate-6";
+      break;
     default:
       initialStyles = "opacity-0 translate-y-12";
   }
 
-  const animatedStyles = "opacity-100 translate-x-0 translate-y-0";
+  const animatedStyles = "opacity-100 translate-x-0 translate-y-0 scale-100 rotate-0";
 
   return (
     <div

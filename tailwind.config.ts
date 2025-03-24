@@ -127,6 +127,28 @@ export default {
           "0%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
           "100%": { transform: "translateY(0px)" }
+        },
+        "text-shine": {
+          "0%": { 
+            backgroundPosition: "200% center",
+            backgroundSize: "200% auto"
+          },
+          "100%": { 
+            backgroundPosition: "-200% center", 
+            backgroundSize: "200% auto"
+          }
+        },
+        "shimmer": {
+          "0%": { backgroundPosition: "-1000% 0" },
+          "100%": { backgroundPosition: "1000% 0" }
+        },
+        "rotate-slow": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" }
+        },
+        "bounce-light": {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-5px)" }
         }
       },
       animation: {
@@ -139,12 +161,17 @@ export default {
         "slide-out-left": "slide-out-left 0.5s ease-out",
         "pulse-subtle": "pulse-subtle 3s infinite",
         "scale-in": "scale-in 0.4s ease-out",
-        "floating": "floating 3s ease-in-out infinite"
+        "floating": "floating 3s ease-in-out infinite",
+        "text-shine": "text-shine 4s ease-in-out infinite",
+        "shimmer": "shimmer 8s ease-in-out infinite",
+        "rotate-slow": "rotate-slow 8s linear infinite",
+        "bounce-light": "bounce-light 2s ease-in-out infinite"
       },
       backgroundImage: {
         "gold-gradient": "linear-gradient(45deg, #D4AF37 0%, #F2D675 50%, #D4AF37 100%)",
         "blue-gradient": "linear-gradient(90deg, #0F1A2A 0%, #15274B 100%)",
         "dark-radial": "radial-gradient(circle at center, #15274B 0%, #0A0A0A 70%)",
+        "text-gradient-gold": "linear-gradient(to right, #D4AF37, #F2D675, #D4AF37)",
       },
       backdropFilter: {
         "none": "none",

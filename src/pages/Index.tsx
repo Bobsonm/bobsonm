@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionCard } from "@/components/SectionCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
-import { ContactButton } from "@/components/ContactButton";
 import { ArrowDown } from "lucide-react";
 
 const Index = () => {
@@ -58,7 +57,7 @@ const Index = () => {
             delay={300} 
             className={`transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
           >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 animate-text-shine">
               <span className="text-white">Bobsonm</span>
               <span className="text-bobsonm-gold">.</span>
               <span className="text-white">ru</span>
@@ -73,15 +72,9 @@ const Index = () => {
           
           <AnimatedSection delay={900} direction="up">
             <p className="text-muted-foreground max-w-2xl mx-auto mb-10 text-balance">
-              Место, где сочетаются изысканный комфорт, интеллектуальный азарт и спортивное мастерство. 
+              Место, где соединяются лаундж с кальянами и вкусной кухней, интеллектуальный азарт мафии и спортивное мастерство бильярда. 
               Три уникальных направления — одно пространство для вашего идеального отдыха.
             </p>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={1200} direction="up">
-            <ContactButton size="lg" className="animate-pulse-subtle">
-              Забронировать стол
-            </ContactButton>
           </AnimatedSection>
           
           {/* Scroll down indicator */}
