@@ -6,96 +6,69 @@ import { MenuScans } from "@/components/MenuScans";
 import { YandexMap } from "@/components/YandexMap";
 import { Separator } from "@/components/ui/separator";
 import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
-
 const Lounge = () => {
   useEffect(() => {
     // Smooth scroll to top when component mounts
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
   }, []);
-  
-  // Gallery images - Updated with user-provided images
-  const loungeImages = [
-    {
-      src: "/img_1.jpg",
-      alt: "Уютный интерьер Bobsonm Lounge"
-    },
-    {
-      src: "/img_2.jpg",
-      alt: "Барная стойка Bobsonm Lounge"
-    },
-    {
-      src: "/img_3.jpg",
-      alt: "Зона отдыха Bobsonm Lounge"
-    },
-    {
-      src: "/img_4.jpg", 
-      alt: "VIP-зона Bobsonm Lounge"
-    },
-    {
-      src: "/img_5.jpg",
-      alt: "Атмосфера в Bobsonm Lounge"
-    },
-    {
-      src: "/img_6.jpg",
-      alt: "Кальяны в Bobsonm Lounge"
-    }
-  ];
-  
-  // Menu scans example - replace with actual menu images
-  const menuScans = [
-    {
-      value: "food",
-      label: "Еда",
-      images: [
-        "https://images.unsplash.com/photo-1562059392-096cd0b8cce5?q=80&w=1019&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1627563252940-fbf7e4a29923?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=987&auto=format&fit=crop"
-      ]
-    },
-    {
-      value: "bar-hookah",
-      label: "Бар и Кальян",
-      images: [
-        "https://images.unsplash.com/photo-1605270012917-bf357a1a2908?q=80&w=1036&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1606767417424-5377577ecce9?q=80&w=987&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1603569283847-aa295f0d481a?q=80&w=987&auto=format&fit=crop"
-      ]
-    }
-  ];
-  
-  // Promotions
-  const promotions = [
-    {
-      title: "Happy Hours",
-      description: "Скидка 20% на весь чек по будням с 13:00 до 16:00",
-      period: "По будням"
-    },
-    {
-      title: "Бонусная программа",
-      description: "300 бонусных баллов за регистрацию в системе лояльности",
-      period: "При регистрации",
-      link: "https://app.samosale.ru/BobsonmLounge"
-    },
-    {
-      title: "День рождения",
-      description: "В день рождения и 3 дня после -10% на весь счет",
-      period: "В день рождения и 3 дня после"
-    }
-  ];
 
-  return (
-    <div className="flex flex-col min-h-screen bg-bobsonm-black pt-16 md:pt-20">
+  // Gallery images - Updated with user-provided images
+  const loungeImages = [{
+    src: "/img_1.jpg",
+    alt: "Уютный интерьер Bobsonm Lounge"
+  }, {
+    src: "/img_2.jpg",
+    alt: "Барная стойка Bobsonm Lounge"
+  }, {
+    src: "/img_3.jpg",
+    alt: "Зона отдыха Bobsonm Lounge"
+  }, {
+    src: "/img_4.jpg",
+    alt: "VIP-зона Bobsonm Lounge"
+  }, {
+    src: "/img_5.jpg",
+    alt: "Атмосфера в Bobsonm Lounge"
+  }, {
+    src: "/img_6.jpg",
+    alt: "Кальяны в Bobsonm Lounge"
+  }];
+
+  // Menu scans example - replace with actual menu images
+  const menuScans = [{
+    value: "food",
+    label: "Еда",
+    images: ["https://images.unsplash.com/photo-1562059392-096cd0b8cce5?q=80&w=1019&auto=format&fit=crop", "https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1627563252940-fbf7e4a29923?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=987&auto=format&fit=crop"]
+  }, {
+    value: "bar-hookah",
+    label: "Бар и Кальян",
+    images: ["https://images.unsplash.com/photo-1605270012917-bf357a1a2908?q=80&w=1036&auto=format&fit=crop", "https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1606767417424-5377577ecce9?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1603569283847-aa295f0d481a?q=80&w=987&auto=format&fit=crop"]
+  }];
+
+  // Promotions
+  const promotions = [{
+    title: "Happy Hours",
+    description: "Скидка 20% на весь чек по будням с 13:00 до 16:00",
+    period: "По будням"
+  }, {
+    title: "Бонусная программа",
+    description: "300 бонусных баллов за регистрацию в системе лояльности",
+    period: "При регистрации",
+    link: "https://app.samosale.ru/BobsonmLounge"
+  }, {
+    title: "День рождения",
+    description: "В день рождения и 3 дня после -10% на весь счет",
+    period: "В день рождения и 3 дня после"
+  }];
+  return <div className="flex flex-col min-h-screen bg-bobsonm-black pt-16 md:pt-20">
       {/* Hero section */}
       <section className="relative flex items-center justify-center h-[60vh] overflow-hidden">
         {/* Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url(https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1974&auto=format&fit=crop)",
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center" style={{
+        backgroundImage: "url(https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1974&auto=format&fit=crop)"
+      }} />
         <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/70 via-bobsonm-black/50 to-bobsonm-black" />
         
         {/* Content */}
@@ -113,11 +86,7 @@ const Lounge = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={900}>
-            <ContactButton 
-              size="lg" 
-              phoneNumber="+7 (901) 417-22-93"
-              className="mt-6"
-            >
+            <ContactButton size="lg" phoneNumber="+7 (901) 417-22-93" className="mt-6">
               Забронировать стол
             </ContactButton>
           </AnimatedSection>
@@ -129,11 +98,7 @@ const Lounge = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AnimatedSection direction="right">
             <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
-              <img 
-                src="/img_1.jpg"
-                alt="Атмосфера Bobsonm Lounge" 
-                className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700"
-              />
+              <img alt="Атмосфера Bobsonm Lounge" className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700" src="/lovable-uploads/25f40c24-ce31-47c8-bd5c-4956bcdda1c9.png" />
             </div>
           </AnimatedSection>
           
@@ -213,8 +178,7 @@ const Lounge = () => {
           </AnimatedSection>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {promotions.map((promo, index) => (
-              <AnimatedSection key={index} direction="up" delay={200 * index}>
+            {promotions.map((promo, index) => <AnimatedSection key={index} direction="up" delay={200 * index}>
                 <div className="glass-panel p-6 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                   <h4 className="font-semibold text-xl mb-2 text-bobsonm-gold">{promo.title}</h4>
                   <p className="text-white mb-4">{promo.description}</p>
@@ -222,20 +186,12 @@ const Lounge = () => {
                     <Calendar size={16} className="text-bobsonm-gold" />
                     <span className="text-sm ml-2">{promo.period}</span>
                   </div>
-                  {promo.link && (
-                    <a 
-                      href={promo.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
-                      className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm"
-                    >
+                  {promo.link && <a href={promo.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm">
                       Перейти к регистрации
                       <ExternalLink size={14} className="ml-2" />
-                    </a>
-                  )}
+                    </a>}
                 </div>
-              </AnimatedSection>
-            ))}
+              </AnimatedSection>)}
           </div>
         </div>
       </section>
@@ -296,12 +252,7 @@ const Lounge = () => {
               </div>
               
               <div className="mt-8 text-center">
-                <ContactButton 
-                  size="lg" 
-                  variant="primary" 
-                  phoneNumber="+7 (901) 417-22-93" 
-                  className="w-full"
-                >
+                <ContactButton size="lg" variant="primary" phoneNumber="+7 (901) 417-22-93" className="w-full">
                   Забронировать стол
                 </ContactButton>
               </div>
@@ -313,8 +264,6 @@ const Lounge = () => {
           </AnimatedSection>
         </div>
       </section>
-    </div>
-  );
+    </div>;
 };
-
 export default Lounge;
