@@ -184,7 +184,7 @@ const Lounge = () => {
                   <p className="text-white mb-4">{promo.description}</p>
                   <div className="flex items-center mt-auto">
                     <Calendar size={16} className="text-bobsonm-gold" />
-                    <span className="text-sm ml-2">{promo.period}</span>
+                    <span className="text-sm ml-2 text-bobsonm-goldLight">{promo.period}</span>
                   </div>
                   {promo.link && <a href={promo.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm">
                       Перейти к регистрации
@@ -211,7 +211,7 @@ const Lounge = () => {
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Телефон для бронирования</h4>
+                  <h4 className="font-medium text-bobsonm-goldLight">Телефон для бронирования</h4>
                   <a href="tel:+79014172293" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
                     +7 (901) 417-22-93
                   </a>
@@ -223,7 +223,7 @@ const Lounge = () => {
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Телефон управляющего</h4>
+                  <h4 className="font-medium text-bobsonm-goldLight">Телефон управляющего</h4>
                   <a href="tel:+79671311783" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
                     +7 (967) 131-17-83
                   </a>
@@ -236,7 +236,7 @@ const Lounge = () => {
                 <Clock size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium">Время работы</h4>
-                  <p>Ежедневно с 13:00 до 01:00</p>
+                  <p className="text-bobsonm-goldLight font-medium">Ежедневно с 13:00 до 01:00</p>
                   <p className="text-sm text-bobsonm-gold">Пятница и суббота до 03:00</p>
                 </div>
               </div>
@@ -246,8 +246,8 @@ const Lounge = () => {
               <div className="flex items-center">
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Адрес</h4>
-                  <p>Москва, Международная улица 15А</p>
+                  <h4 className="font-medium text-bobsonm-goldLight">Адрес</h4>
+                  <p className="text-bobsonm-gold">Москва, Международная улица 15А</p>
                 </div>
               </div>
               

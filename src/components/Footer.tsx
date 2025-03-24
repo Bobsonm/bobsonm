@@ -1,49 +1,30 @@
-
 import { Link } from "react-router-dom";
 import { Phone, Mail, MapPin, Instagram, Facebook } from "lucide-react";
-
 export function Footer() {
   const currentYear = new Date().getFullYear();
-  
-  return (
-    <footer className="bg-bobsonm-black border-t border-bobsonm-navy/30">
+  return <footer className="bg-bobsonm-black border-t border-bobsonm-navy/30">
       <div className="bobsonm-container">
         <div className="py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="space-y-4">
-              <Link 
-                to="/" 
-                className="inline-block text-2xl font-bold font-serif"
-              >
+            <div className="space-y-4 bg-bobsonm-smokeBlack">
+              <Link to="/" className="inline-block text-2xl font-bold font-serif">
                 Bobsonm<span className="text-bobsonm-gold">.</span>ru
               </Link>
               <p className="text-muted-foreground max-w-xs">
                 Твоя территория отдыха. Место, где сочетаются изысканный комфорт, интеллектуальный азарт и спортивное мастерство.
               </p>
               <div className="flex space-x-4">
-                <a 
-                  href="https://instagram.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-bobsonm-gold transition-colors"
-                  aria-label="Instagram"
-                >
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-bobsonm-gold transition-colors" aria-label="Instagram">
                   <Instagram size={20} />
                 </a>
-                <a 
-                  href="https://facebook.com" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-bobsonm-gold transition-colors"
-                  aria-label="Facebook"
-                >
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-bobsonm-gold transition-colors" aria-label="Facebook">
                   <Facebook size={20} />
                 </a>
               </div>
             </div>
             
             <div>
-              <h3 className="text-lg font-medium mb-4">Наши проекты</h3>
+              <h3 className="text-lg font-medium mb-4 text-bobsonm-gold">Наши проекты</h3>
               <ul className="space-y-2">
                 <li>
                   <Link to="/lounge" className="text-muted-foreground hover:text-bobsonm-gold transition-colors">
@@ -64,7 +45,7 @@ export function Footer() {
             </div>
             
             <div>
-              <h3 className="text-lg font-medium mb-4">Контакты</h3>
+              <h3 className="text-lg font-medium mb-4 text-bobsonm-gold">Контакты</h3>
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <MapPin size={18} className="text-bobsonm-gold mt-0.5" />
@@ -101,6 +82,5 @@ export function Footer() {
           </div>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 }
