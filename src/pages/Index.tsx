@@ -19,22 +19,22 @@ const Index = () => {
   // Section data
   const sections = [
     {
+      title: "Bobsonm Бильярд",
+      description: "Профессиональные столы, уютная атмосфера и превосходный сервис — идеальное место для игры с друзьями.",
+      imageSrc: "/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png",
+      linkTo: "/billiards"
+    },
+    {
       title: "Bobsonm Lounge",
       description: "Погрузись в атмосферу уюта и релакса с премиальными кальянами, изысканными напитками и приятной музыкой.",
-      imageSrc: "https://images.unsplash.com/photo-1528495612343-9ca9f4a4de28?q=80&w=1074&auto=format&fit=crop",
+      imageSrc: "/lovable-uploads/adb9981e-55c4-4f48-8d78-0eae2fb0fe09.png",
       linkTo: "/lounge"
     },
     {
       title: "Bobsonm Mafia",
       description: "Интеллектуальная игра с профессиональными ведущими. Раскрой в себе талант стратега или актёрское мастерство.",
-      imageSrc: "https://images.unsplash.com/photo-1618221118493-9c68cfeaf09f?q=80&w=1032&auto=format&fit=crop",
+      imageSrc: "/lovable-uploads/f2c1b295-9a6e-4390-8ea7-8671297c8dbe.png",
       linkTo: "/mafia"
-    },
-    {
-      title: "Bobsonm Бильярд",
-      description: "Профессиональные столы, уютная атмосфера и превосходный сервис — идеальное место для игры с друзьями.",
-      imageSrc: "https://images.unsplash.com/photo-1615247644823-a5f0d3b5f795?q=80&w=987&auto=format&fit=crop",
-      linkTo: "/billiards"
     }
   ];
 
@@ -71,7 +71,7 @@ const Index = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={900} direction="up">
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-10 text-balance">
+            <p className="text-white max-w-2xl mx-auto mb-10 text-balance">
               Место, где соединяются лаундж с кальянами и вкусной кухней, интеллектуальный азарт мафии и спортивное мастерство бильярда. 
               Три уникальных направления — одно пространство для вашего идеального отдыха.
             </p>
@@ -102,7 +102,7 @@ const Index = () => {
         </AnimatedSection>
         
         <AnimatedSection direction="up" delay={200}>
-          <p className="text-muted-foreground text-center max-w-3xl mx-auto mb-16">
+          <p className="text-white text-center max-w-3xl mx-auto mb-16">
             Каждый из наших проектов — это отдельный мир, созданный с любовью к деталям и вниманием к вашему комфорту.
             Выберите направление, которое подходит вашему настроению сегодня.
           </p>
@@ -129,13 +129,13 @@ const Index = () => {
         <div className="bobsonm-container px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
             <AnimatedSection direction="up">
-              <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-6">
+              <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-6 text-bobsonm-gold">
                 Особая атмосфера
               </h2>
             </AnimatedSection>
             
             <AnimatedSection direction="up" delay={200}>
-              <p className="text-muted-foreground mb-10">
+              <p className="text-white mb-10">
                 Bobsonm — это не просто место, а настроение. Здесь каждая деталь продумана для того, 
                 чтобы вы чувствовали себя особенными. Приходите с друзьями или коллегами и создавайте 
                 новые воспоминания в нашем пространстве.
@@ -143,13 +143,13 @@ const Index = () => {
             </AnimatedSection>
             
             <AnimatedSection direction="up" delay={400}>
-              <Link 
-                to="/lounge" 
+              <a 
+                href="tel:+79671311783" 
                 className="inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors"
               >
-                Исследовать больше
+                +7 (967) 131-17-83
                 <ArrowDown size={18} className="ml-2 rotate-90" />
-              </Link>
+              </a>
             </AnimatedSection>
           </div>
         </div>

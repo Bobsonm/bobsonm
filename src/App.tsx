@@ -10,7 +10,7 @@ import Mafia from "./pages/Mafia";
 import Billiards from "./pages/Billiards";
 import NotFound from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
-import { Footer } from "./components/Footer";
+import { ScrollToTop } from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -31,7 +31,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
-          <Footer />
+          <ScrollToTop />
         </div>
       </BrowserRouter>
     </TooltipProvider>

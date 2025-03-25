@@ -24,9 +24,9 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Главная", path: "/" },
+    { name: "Бильярд", path: "/billiards" },
     { name: "Lounge", path: "/lounge" },
     { name: "Mafia", path: "/mafia" },
-    { name: "Бильярд", path: "/billiards" },
   ];
 
   const getPhoneNumber = () => {
@@ -38,7 +38,7 @@ export function Navbar() {
       case '/billiards':
         return "+7 (495) 908-92-45";
       default:
-        return "+7 (495) 908-92-45"; // Default number for homepage
+        return "+7 (967) 131-17-83"; // Default number for homepage (changed to Mafia number)
     }
   };
 

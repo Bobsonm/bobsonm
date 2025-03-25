@@ -58,27 +58,27 @@ const Billiards = () => {
   // VIP room images - новые фотографии
   const vipRoomImages = [
     {
-      src: "/lovable-uploads/27a640d9-e58d-4f74-a294-d27888724c3b.png",
+      src: "/lovable-uploads/19679430-2f9e-41e8-91b9-a248692b14e7.png",
       alt: "VIP-комната бильярда с зеленым столом и серебристыми шторами"
     },
     {
-      src: "/lovable-uploads/6951aa59-61bc-4ace-90a7-bf6ea6c0b473.png",
-      alt: "Зона отдыха VIP-комнаты с телевизором и логотипом Bobsonm Lounge"
+      src: "/lovable-uploads/371762a3-0f44-4c1a-ba97-ef5bf5bf2982.png",
+      alt: "Зона отдыха VIP-комнаты с телевизором"
     },
     {
-      src: "/lovable-uploads/ce886aaf-2e5d-4f3d-b64b-86a16d208661.png",
-      alt: "Бильярдный стол в VIP-комнате с подставкой для шаров"
+      src: "/lovable-uploads/feedf6e5-0712-4997-875d-98e8d7851382.png",
+      alt: "Бильярдный стол в VIP-комнате"
     },
     {
-      src: "/lovable-uploads/68dde539-1a15-47d9-ade7-1fe6a8ad4dba.png",
+      src: "/lovable-uploads/85b5051f-664e-41fe-b92f-b9642ffd9043.png",
       alt: "Зона отдыха с мятным диваном в VIP-комнате"
     },
     {
-      src: "/lovable-uploads/f0375c61-2d59-4250-ad17-53e931e8d1fc.png",
+      src: "/lovable-uploads/3fafbaf8-6316-4062-a5f3-1850671b28d9.png",
       alt: "Обеденный стол в VIP-комнате с креслами"
     },
     {
-      src: "/lovable-uploads/d08d6f51-e968-4d74-b324-e89fec7a597a.png",
+      src: "/lovable-uploads/aa096ab2-0f96-4e5c-a8b2-e707049928b9.png",
       alt: "Панорамный вид VIP-комнаты с бильярдным столом и зоной отдыха"
     }
   ];
@@ -108,7 +108,7 @@ const Billiards = () => {
     {
       type: "Русский бильярд",
       count: 8,
-      description: "Профессиональные 12-футовые столы с итальянским сукном высшего качества",
+      description: "Профессиональные 12-футовые столы с бельгийским сукном Iwan Simonis высшего качества",
       features: "Идеально выверенная геометрия, рассеянное освещение"
     },
     {
@@ -333,6 +333,11 @@ const Billiards = () => {
                       </div>
                     ))}
                   </div>
+                  {category.title === "Русский бильярд" || category.title === "Американский пул" ? (
+                    <p className="text-bobsonm-navy/50 text-xs mt-2 text-right italic">
+                      * Игры после 03:00 должны быть согласованы с администратором
+                    </p>
+                  ) : null}
                 </div>
               </AnimatedSection>
             ))}

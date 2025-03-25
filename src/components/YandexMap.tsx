@@ -1,5 +1,5 @@
 
-import React from "react";
+import { AnimatedSection } from "./AnimatedSection";
 
 interface YandexMapProps {
   src: string;
@@ -8,17 +8,18 @@ interface YandexMapProps {
 
 export function YandexMap({ src, className }: YandexMapProps) {
   return (
-    <div className={`w-full h-[400px] rounded-lg overflow-hidden border-2 border-bobsonm-navy/30 ${className}`}>
-      <iframe 
-        src={src} 
-        width="100%" 
-        height="100%" 
-        frameBorder="0"
-        title="Yandex Map"
-        className="w-full h-full"
-        loading="lazy"
-        allow="geolocation"
-      />
-    </div>
+    <AnimatedSection className={className || ""}>
+      <div className="glass-panel p-2 rounded-lg overflow-hidden shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
+        <iframe 
+          src={src}
+          width="100%" 
+          height="400" 
+          frameBorder="0"
+          allow="fullscreen"
+          className="rounded-md"
+          aria-label="Yandex Map"
+        ></iframe>
+      </div>
+    </AnimatedSection>
   );
 }

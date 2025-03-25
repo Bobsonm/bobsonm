@@ -5,6 +5,7 @@ import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
 import { MenuScans } from "@/components/MenuScans";
 import { YandexMap } from "@/components/YandexMap";
+import { FoodMenuCarousel } from "@/components/FoodMenuCarousel";
 import { Separator } from "@/components/ui/separator";
 import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
 
@@ -67,6 +68,58 @@ const Lounge = () => {
     label: "Бар и Кальян",
     images: ["https://images.unsplash.com/photo-1605270012917-bf357a1a2908?q=80&w=1036&auto=format&fit=crop", "https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1606767417424-5377577ecce9?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1603569283847-aa295f0d481a?q=80&w=987&auto=format&fit=crop"]
   }];
+
+  // Food menu images from uploaded files
+  const foodMenuImages = [
+    {
+      src: "/lovable-uploads/19679430-2f9e-41e8-91b9-a248692b14e7.png",
+      alt: "Бургеры меню"
+    },
+    {
+      src: "/lovable-uploads/feedf6e5-0712-4997-875d-98e8d7851382.png",
+      alt: "Горячие блюда меню"
+    },
+    {
+      src: "/lovable-uploads/85b5051f-664e-41fe-b92f-b9642ffd9043.png",
+      alt: "Салаты меню"
+    },
+    {
+      src: "/lovable-uploads/3fafbaf8-6316-4062-a5f3-1850671b28d9.png",
+      alt: "Паста меню"
+    },
+    {
+      src: "/lovable-uploads/aa096ab2-0f96-4e5c-a8b2-e707049928b9.png",
+      alt: "Десерты меню"
+    },
+    {
+      src: "/lovable-uploads/25f61bda-81e1-4267-9911-d7311c84f187.png",
+      alt: "Закуски и сеты меню 1"
+    },
+    {
+      src: "/lovable-uploads/8757342d-1eb3-40b2-a60c-1168ca3573b5.png",
+      alt: "Закуски и сеты меню 2"
+    },
+    {
+      src: "/lovable-uploads/e9a7a7f2-409c-43f2-ba56-a3220625e6a5.png",
+      alt: "Закуски и сеты меню 3"
+    },
+    {
+      src: "/lovable-uploads/dd395ab1-8327-43cc-968f-59f225bd1a7b.png",
+      alt: "Салаты меню"
+    },
+    {
+      src: "/lovable-uploads/6a5c91ee-38f6-42f2-b009-fc67323265fc.png",
+      alt: "Гарниры меню"
+    },
+    {
+      src: "/lovable-uploads/b28470d9-1a19-4efc-832d-d3f1bb3ff667.png",
+      alt: "Супы меню"
+    },
+    {
+      src: "/lovable-uploads/37a05f8c-d5ed-46a4-8738-61ae19e4e659.png",
+      alt: "Бургеры меню 2"
+    },
+  ];
 
   // Promotions
   const promotions = [{
@@ -169,13 +222,29 @@ const Lounge = () => {
         </div>
       </section>
       
-      {/* Menu section */}
+      {/* Food Menu Carousel section */}
       <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Меню</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Наше меню</h3>
             <p className="text-white text-center mb-12 max-w-2xl mx-auto">
-              Насладитесь нашей авторской кухней, изысканными напитками и премиальными кальянами
+              Насладитесь нашей авторской кухней и изысканными блюдами
+            </p>
+          </AnimatedSection>
+          
+          <div className="max-w-5xl mx-auto">
+            <FoodMenuCarousel images={foodMenuImages} />
+          </div>
+        </div>
+      </section>
+      
+      {/* Menu section */}
+      <section className="py-20">
+        <div className="bobsonm-container px-4">
+          <AnimatedSection direction="up">
+            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Бар и кальян</h3>
+            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+              Премиальные кальяны и изысканные напитки для полного релакса
             </p>
           </AnimatedSection>
           
@@ -275,7 +344,7 @@ const Lounge = () => {
                 <Clock size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium text-white">Время работы</h4>
-                  <p className="text-bobsonm-goldLight font-medium">Ежедневно с 13:00 до 01:00</p>
+                  <p className="text-white">Ежедневно с 13:00 до 01:00</p>
                   <p className="text-sm text-bobsonm-gold">Пятница и суббота до 03:00</p>
                 </div>
               </div>
@@ -286,7 +355,7 @@ const Lounge = () => {
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium text-white">Адрес</h4>
-                  <p className="text-bobsonm-gold">Москва, Международная улица 15А</p>
+                  <p className="text-white">Москва, Международная улица 15А</p>
                 </div>
               </div>
               

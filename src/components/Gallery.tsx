@@ -68,7 +68,7 @@ export function Gallery({
                 width={image.width || 400} 
                 height={image.height || 300} 
                 loading="lazy" 
-                className={cn("w-full h-full object-cover", roundedClasses[rounded])} 
+                className={cn("w-full h-auto object-cover", roundedClasses[rounded])} 
               />
             </button>
           </AnimatedSection>
@@ -76,7 +76,7 @@ export function Gallery({
       </div>
       
       <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
-        <DialogContent className="max-w-3xl p-0 border-bobsonm-navy bg-bobsonm-black/90 backdrop-blur-lg">
+        <DialogContent className="max-w-5xl p-0 border-bobsonm-navy bg-bobsonm-black/90 backdrop-blur-lg">
           <button 
             onClick={() => setSelectedImage(null)} 
             className="absolute right-4 top-4 z-10 rounded-full p-1.5 bg-black/50 text-white hover:bg-black/80 transition-colors" 
@@ -85,7 +85,7 @@ export function Gallery({
             <X size={18} />
           </button>
           {selectedImage && (
-            <div className="flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full p-4">
               <img 
                 src={selectedImage.src} 
                 alt={selectedImage.alt} 
