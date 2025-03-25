@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
@@ -6,6 +7,7 @@ import { MenuScans } from "@/components/MenuScans";
 import { YandexMap } from "@/components/YandexMap";
 import { Separator } from "@/components/ui/separator";
 import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
+
 const Lounge = () => {
   useEffect(() => {
     // Smooth scroll to top when component mounts
@@ -16,25 +18,44 @@ const Lounge = () => {
   }, []);
 
   // Gallery images - Updated with user-provided images
-  const loungeImages = [{
-    src: "/img_1.jpg",
-    alt: "Уютный интерьер Bobsonm Lounge"
-  }, {
-    src: "/img_2.jpg",
-    alt: "Барная стойка Bobsonm Lounge"
-  }, {
-    src: "/img_3.jpg",
-    alt: "Зона отдыха Bobsonm Lounge"
-  }, {
-    src: "/img_4.jpg",
-    alt: "VIP-зона Bobsonm Lounge"
-  }, {
-    src: "/img_5.jpg",
-    alt: "Атмосфера в Bobsonm Lounge"
-  }, {
-    src: "/img_6.jpg",
-    alt: "Кальяны в Bobsonm Lounge"
-  }];
+  const loungeImages = [
+    {
+      src: "/lovable-uploads/cd25fd07-854f-4982-8a9a-d7a7eeb0d8f6.png",
+      alt: "Шоколадный фонтан с фруктами в Bobsonm Lounge"
+    },
+    {
+      src: "/lovable-uploads/59a0275b-c960-4faf-8bc9-4020035bad4e.png",
+      alt: "VIP зона с телевизором и портретом"
+    },
+    {
+      src: "/lovable-uploads/0db26f61-1414-4c81-8ee8-e38ef6ea7b77.png",
+      alt: "Дизайнерский элемент интерьера с подсветкой"
+    },
+    {
+      src: "/lovable-uploads/885fb2fa-6d8e-4986-afb0-b58e99739894.png",
+      alt: "Зона отдыха Bobsonm Lounge с логотипом"
+    },
+    {
+      src: "/lovable-uploads/5e9fb870-9294-4f3a-9c0c-6c9069ebfdca.png",
+      alt: "Уютный интерьер Bobsonm Lounge с кирпичной стеной"
+    },
+    {
+      src: "/lovable-uploads/ed4375a5-9a58-4b8b-9efd-9c7590d16df5.png",
+      alt: "Бар Bobsonm Lounge с декоративными статуэтками"
+    },
+    {
+      src: "/lovable-uploads/7f313834-974b-40cc-9088-31bfedc73848.png",
+      alt: "Логотип Bobsonm Lounge на стене"
+    },
+    {
+      src: "/lovable-uploads/adb9981e-55c4-4f48-8d78-0eae2fb0fe09.png",
+      alt: "Бар и зона отдыха Bobsonm Lounge"
+    },
+    {
+      src: "/lovable-uploads/f2c1b295-9a6e-4390-8ea7-8671297c8dbe.png",
+      alt: "Маски Bobsonm Mafia на столе"
+    }
+  ];
 
   // Menu scans example - replace with actual menu images
   const menuScans = [{
@@ -62,13 +83,18 @@ const Lounge = () => {
     description: "В день рождения и 3 дня после -10% на весь счет",
     period: "В день рождения и 3 дня после"
   }];
-  return <div className="flex flex-col min-h-screen bg-bobsonm-black pt-16 md:pt-20">
+  
+  return (
+    <div className="flex flex-col min-h-screen bg-bobsonm-black pt-16 md:pt-20">
       {/* Hero section */}
       <section className="relative flex items-center justify-center h-[60vh] overflow-hidden">
         {/* Background */}
-        <div className="absolute inset-0 bg-cover bg-center" style={{
-        backgroundImage: "url(https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1974&auto=format&fit=crop)"
-      }} />
+        <div 
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ 
+            backgroundImage: "url(/lovable-uploads/adb9981e-55c4-4f48-8d78-0eae2fb0fe09.png)"
+          }}
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/70 via-bobsonm-black/50 to-bobsonm-black" />
         
         {/* Content */}
@@ -98,7 +124,11 @@ const Lounge = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <AnimatedSection direction="right">
             <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
-              <img alt="Атмосфера Bobsonm Lounge" className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700" src="/lovable-uploads/25f40c24-ce31-47c8-bd5c-4956bcdda1c9.png" />
+              <img 
+                alt="Атмосфера Bobsonm Lounge" 
+                className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700" 
+                src="/lovable-uploads/7f313834-974b-40cc-9088-31bfedc73848.png" 
+              />
             </div>
           </AnimatedSection>
           
@@ -119,20 +149,20 @@ const Lounge = () => {
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Clock className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-white">Работаем ежедневно</span>
-                <span className="font-medium">13:00 - 01:00</span>
+                <span className="font-medium text-white">13:00 - 01:00</span>
                 <span className="text-xs text-bobsonm-gold mt-1">Пт-Сб до 03:00</span>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Music className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-white">Mafia</span>
-                <span className="font-medium">Игры по расписанию</span>
+                <span className="font-medium text-white">Игры по расписанию</span>
               </div>
               
               <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                 <Users className="text-bobsonm-gold mb-3" size={24} />
                 <span className="text-sm text-white">До 100 гостей</span>
-                <span className="font-medium">Уютные зоны</span>
+                <span className="font-medium text-white">Уютные зоны</span>
               </div>
             </div>
           </AnimatedSection>
@@ -178,7 +208,8 @@ const Lounge = () => {
           </AnimatedSection>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {promotions.map((promo, index) => <AnimatedSection key={index} direction="up" delay={200 * index}>
+            {promotions.map((promo, index) => (
+              <AnimatedSection key={index} direction="up" delay={200 * index}>
                 <div className="glass-panel p-6 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
                   <h4 className="font-semibold text-xl mb-2 text-bobsonm-gold">{promo.title}</h4>
                   <p className="text-white mb-4">{promo.description}</p>
@@ -186,12 +217,20 @@ const Lounge = () => {
                     <Calendar size={16} className="text-bobsonm-gold" />
                     <span className="text-sm ml-2 text-bobsonm-goldLight">{promo.period}</span>
                   </div>
-                  {promo.link && <a href={promo.link} target="_blank" rel="noopener noreferrer" className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm">
+                  {promo.link && (
+                    <a 
+                      href={promo.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm"
+                    >
                       Перейти к регистрации
                       <ExternalLink size={14} className="ml-2" />
-                    </a>}
+                    </a>
+                  )}
                 </div>
-              </AnimatedSection>)}
+              </AnimatedSection>
+            ))}
           </div>
         </div>
       </section>
@@ -211,7 +250,7 @@ const Lounge = () => {
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium text-bobsonm-goldLight">Телефон для бронирования</h4>
+                  <h4 className="font-medium text-white">Телефон для бронирования</h4>
                   <a href="tel:+79014172293" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
                     +7 (901) 417-22-93
                   </a>
@@ -223,7 +262,7 @@ const Lounge = () => {
               <div className="flex items-center mb-6">
                 <Phone size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium text-bobsonm-goldLight">Телефон управляющего</h4>
+                  <h4 className="font-medium text-white">Телефон управляющего</h4>
                   <a href="tel:+79671311783" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
                     +7 (967) 131-17-83
                   </a>
@@ -235,7 +274,7 @@ const Lounge = () => {
               <div className="flex items-center mb-6">
                 <Clock size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium">Время работы</h4>
+                  <h4 className="font-medium text-white">Время работы</h4>
                   <p className="text-bobsonm-goldLight font-medium">Ежедневно с 13:00 до 01:00</p>
                   <p className="text-sm text-bobsonm-gold">Пятница и суббота до 03:00</p>
                 </div>
@@ -246,7 +285,7 @@ const Lounge = () => {
               <div className="flex items-center">
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
-                  <h4 className="font-medium text-bobsonm-goldLight">Адрес</h4>
+                  <h4 className="font-medium text-white">Адрес</h4>
                   <p className="text-bobsonm-gold">Москва, Международная улица 15А</p>
                 </div>
               </div>
@@ -264,6 +303,8 @@ const Lounge = () => {
           </AnimatedSection>
         </div>
       </section>
-    </div>;
+    </div>
+  );
 };
+
 export default Lounge;
