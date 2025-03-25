@@ -3,10 +3,10 @@ import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
-import { MenuScans } from "@/components/MenuScans";
 import { YandexMap } from "@/components/YandexMap";
 import { FoodMenuCarousel } from "@/components/FoodMenuCarousel";
 import { Separator } from "@/components/ui/separator";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
 
 const Lounge = () => {
@@ -58,17 +58,6 @@ const Lounge = () => {
     }
   ];
 
-  // Menu scans example - replace with actual menu images
-  const menuScans = [{
-    value: "food",
-    label: "Еда",
-    images: ["https://images.unsplash.com/photo-1562059392-096cd0b8cce5?q=80&w=1019&auto=format&fit=crop", "https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1627563252940-fbf7e4a29923?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?q=80&w=987&auto=format&fit=crop"]
-  }, {
-    value: "bar-hookah",
-    label: "Бар и Кальян",
-    images: ["https://images.unsplash.com/photo-1605270012917-bf357a1a2908?q=80&w=1036&auto=format&fit=crop", "https://images.unsplash.com/photo-1559628233-100c798642d4?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1606767417424-5377577ecce9?q=80&w=987&auto=format&fit=crop", "https://images.unsplash.com/photo-1603569283847-aa295f0d481a?q=80&w=987&auto=format&fit=crop"]
-  }];
-
   // Food menu images from uploaded files
   const foodMenuImages = [
     {
@@ -119,6 +108,82 @@ const Lounge = () => {
       src: "/lovable-uploads/37a05f8c-d5ed-46a4-8738-61ae19e4e659.png",
       alt: "Бургеры меню 2"
     },
+  ];
+
+  // Bar and hookah menu images from newly uploaded files
+  const barHookahMenuImages = [
+    {
+      src: "/lovable-uploads/d0205d4e-8156-4c55-b668-76749dbcd167.png",
+      alt: "Черные чаи"
+    },
+    {
+      src: "/lovable-uploads/017a0e38-b216-4c9b-861f-46060aef8ce5.png",
+      alt: "Зеленые чаи"
+    },
+    {
+      src: "/lovable-uploads/1c7ae01b-1cd0-4505-95f8-6ec4952de2eb.png",
+      alt: "Особые чаи"
+    },
+    {
+      src: "/lovable-uploads/ffc3735e-7f38-4a3e-af17-81938cf47aa9.png",
+      alt: "Холодные чаи и допы"
+    },
+    {
+      src: "/lovable-uploads/e96807c1-fcaf-40a8-ae8b-a95fa9678d55.png",
+      alt: "Кофе"
+    },
+    {
+      src: "/lovable-uploads/942778e6-6531-46b9-b7f5-5ef92a5b841e.png",
+      alt: "Сангрии"
+    },
+    {
+      src: "/lovable-uploads/e83c4e63-322a-457c-bbf0-421cae2da37d.png",
+      alt: "Прохладительные напитки"
+    },
+    {
+      src: "/lovable-uploads/7d4ce2dd-879a-4e0a-87c7-ee50c986e3e7.png",
+      alt: "Лимонады 1"
+    },
+    {
+      src: "/lovable-uploads/3fe6aed7-17f7-454a-8135-693a5377ce53.png",
+      alt: "Лимонады 2"
+    },
+    {
+      src: "/lovable-uploads/97974613-c531-4332-b585-ace084c2db06.png",
+      alt: "Пиво"
+    },
+    {
+      src: "/lovable-uploads/cca87fb9-0c26-4c60-9a69-901121c1de76.png",
+      alt: "Винная карта"
+    },
+    {
+      src: "/lovable-uploads/9850398e-2332-4f47-a502-7e98dc8f0245.png",
+      alt: "Игристые вина"
+    },
+    {
+      src: "/lovable-uploads/7db118d6-fecf-4480-b2e7-655d7303e5cf.png",
+      alt: "Белые вина"
+    },
+    {
+      src: "/lovable-uploads/7fc080cd-9c70-4aac-accb-30102f65c92d.png",
+      alt: "Красные вина"
+    },
+    {
+      src: "/lovable-uploads/64715892-6fdf-4ff3-8a4a-69fde92c4e34.png",
+      alt: "Чай и кофе"
+    },
+    {
+      src: "/lovable-uploads/3bf760e5-3c9b-4e3b-8720-e14110496978.png",
+      alt: "Кальяны"
+    },
+    {
+      src: "/lovable-uploads/d5295dc0-45d8-4dbd-8d24-c69f21d4dfa9.png",
+      alt: "Барная карта"
+    },
+    {
+      src: "/lovable-uploads/49a53fae-fe45-4f96-82bb-16e7ca16836a.png",
+      alt: "Алкогольные коктейли 1"
+    }
   ];
 
   // Promotions
@@ -222,34 +287,42 @@ const Lounge = () => {
         </div>
       </section>
       
-      {/* Food Menu Carousel section */}
+      {/* Combined Menu section with tabs */}
       <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
         <div className="bobsonm-container px-4">
           <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Наше меню</h3>
+            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Меню</h3>
             <p className="text-white text-center mb-12 max-w-2xl mx-auto">
-              Насладитесь нашей авторской кухней и изысканными блюдами
+              Насладитесь нашей авторской кухней, изысканными напитками и премиальными кальянами
             </p>
           </AnimatedSection>
           
           <div className="max-w-5xl mx-auto">
-            <FoodMenuCarousel images={foodMenuImages} />
-          </div>
-        </div>
-      </section>
-      
-      {/* Menu section */}
-      <section className="py-20">
-        <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Бар и кальян</h3>
-            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
-              Премиальные кальяны и изысканные напитки для полного релакса
-            </p>
-          </AnimatedSection>
-          
-          <div className="max-w-5xl mx-auto">
-            <MenuScans tabs={menuScans} />
+            <Tabs defaultValue="food" className="w-full">
+              <TabsList className="w-full bg-bobsonm-navy/20 p-1 mb-6">
+                <TabsTrigger
+                  value="food"
+                  className="data-[state=active]:bg-bobsonm-navy data-[state=active]:text-white"
+                >
+                  Еда
+                </TabsTrigger>
+                
+                <TabsTrigger
+                  value="bar-hookah"
+                  className="data-[state=active]:bg-bobsonm-navy data-[state=active]:text-white"
+                >
+                  Бар и Кальян
+                </TabsTrigger>
+              </TabsList>
+
+              <TabsContent value="food" className="mt-6">
+                <FoodMenuCarousel images={foodMenuImages} />
+              </TabsContent>
+              
+              <TabsContent value="bar-hookah" className="mt-6">
+                <FoodMenuCarousel images={barHookahMenuImages} />
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>
