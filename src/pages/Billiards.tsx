@@ -55,31 +55,31 @@ const Billiards = () => {
     }
   ];
   
-  // VIP room images - новые фотографии
+  // VIP room images - updated with the new images 
   const vipRoomImages = [
     {
-      src: "/lovable-uploads/19679430-2f9e-41e8-91b9-a248692b14e7.png",
+      src: "/lovable-uploads/018298a1-9ae4-4ac3-80df-500dac87b439.png",
       alt: "VIP-комната бильярда с зеленым столом и серебристыми шторами"
     },
     {
-      src: "/lovable-uploads/371762a3-0f44-4c1a-ba97-ef5bf5bf2982.png",
-      alt: "Зона отдыха VIP-комнаты с телевизором"
+      src: "/lovable-uploads/f15e2a33-5b6f-44d8-abde-3b090474d23d.png",
+      alt: "Зона отдыха VIP-комнаты с мятными диванами"
     },
     {
-      src: "/lovable-uploads/feedf6e5-0712-4997-875d-98e8d7851382.png",
-      alt: "Бильярдный стол в VIP-комнате"
+      src: "/lovable-uploads/da609783-240a-40e7-ab5a-7ab9539fa71f.png",
+      alt: "Зона отдыха с длинным столом в VIP-комнате"
     },
     {
-      src: "/lovable-uploads/85b5051f-664e-41fe-b92f-b9642ffd9043.png",
-      alt: "Зона отдыха с мятным диваном в VIP-комнате"
+      src: "/lovable-uploads/23a92615-fca4-48c4-9121-440bf08b4169.png",
+      alt: "Панорамный вид VIP-комнаты с бильярдным столом"
     },
     {
-      src: "/lovable-uploads/3fafbaf8-6316-4062-a5f3-1850671b28d9.png",
-      alt: "Обеденный стол в VIP-комнате с креслами"
+      src: "/lovable-uploads/dd382f4b-028e-452b-9667-5c325879c196.png",
+      alt: "Зона отдыха в VIP-комнате с телевизором"
     },
     {
-      src: "/lovable-uploads/aa096ab2-0f96-4e5c-a8b2-e707049928b9.png",
-      alt: "Панорамный вид VIP-комнаты с бильярдным столом и зоной отдыха"
+      src: "/lovable-uploads/23392b61-9fdf-4a51-ad37-26771393163a.png",
+      alt: "Панорамный вид на всю VIP-комнату с мебелью"
     }
   ];
   
@@ -334,7 +334,7 @@ const Billiards = () => {
                     ))}
                   </div>
                   {category.title === "Русский бильярд" || category.title === "Американский пул" ? (
-                    <p className="text-bobsonm-navy/50 text-xs mt-2 text-right italic">
+                    <p className="text-white/70 text-sm mt-2 text-right italic">
                       * Игры после 03:00 должны быть согласованы с администратором
                     </p>
                   ) : null}
@@ -412,7 +412,7 @@ const Billiards = () => {
                 <MapPin size={24} className="text-bobsonm-gold mr-4" />
                 <div>
                   <h4 className="font-medium text-white">Адрес</h4>
-                  <p className="text-white">Москва, Братиславская улица, 27, корп. 1</p>
+                  <p className="text-white">Москва, ул. Братиславская 27к1</p>
                 </div>
               </div>
               

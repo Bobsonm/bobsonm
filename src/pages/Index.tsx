@@ -21,7 +21,7 @@ const Index = () => {
     {
       title: "Bobsonm Бильярд",
       description: "Профессиональные столы, уютная атмосфера и превосходный сервис — идеальное место для игры с друзьями.",
-      imageSrc: "/lovable-uploads/27d63064-76a3-4c33-a75d-fccc6022f2aa.png", // Updated image
+      imageSrc: "/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png",
       linkTo: "/billiards"
     },
     {
@@ -42,7 +42,7 @@ const Index = () => {
   const venues = [
     {
       name: "Bobsonm Бильярд",
-      address: "Москва, ул. Пестеля, 8А",
+      address: "Москва, ул. Братиславская 27к1",
       phone: "+7 (495) 908-92-45",
       linkTo: "/billiards"
     },
@@ -93,19 +93,19 @@ const Index = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={900} direction="up">
-            <p className="text-white max-w-2xl mx-auto mb-10 text-balance">
+            <p className="text-white max-w-2xl mx-auto mb-14 text-balance">
               Место, где соединяются лаундж с кальянами и вкусной кухней, интеллектуальный азарт мафии и спортивное мастерство бильярда. 
               Три уникальных направления — одно пространство для вашего идеального отдыха.
             </p>
           </AnimatedSection>
           
-          {/* Scroll down indicator - moved down */}
-          <AnimatedSection delay={1800} className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
+          {/* Scroll down indicator - moved below the text */}
+          <AnimatedSection delay={1200}>
             <button 
               onClick={() => {
                 document.getElementById('sections')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="flex flex-col items-center text-white/60 hover:text-white transition-colors animate-floating"
+              className="flex flex-col items-center text-white/60 hover:text-white transition-colors animate-floating mt-8"
               aria-label="Scroll down"
             >
               <span className="text-sm mb-2">Исследовать</span>
@@ -118,7 +118,7 @@ const Index = () => {
       {/* Sections */}
       <section id="sections" className="bobsonm-container py-20 px-4">
         <AnimatedSection direction="up">
-          <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-4 text-center">
+          <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-4 text-center text-bobsonm-gold">
             Наши проекты
           </h2>
         </AnimatedSection>
