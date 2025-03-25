@@ -14,11 +14,15 @@ interface VipRoomCarouselProps {
     alt: string;
   }[];
   className?: string;
+  title?: string;
 }
 
-export function VipRoomCarousel({ images, className }: VipRoomCarouselProps) {
+export function VipRoomCarousel({ images, className, title }: VipRoomCarouselProps) {
   return (
     <AnimatedSection direction="right">
+      {title && (
+        <h4 className="text-xl font-serif font-semibold mb-4 text-bobsonm-gold text-center">{title}</h4>
+      )}
       <div className={`overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30 ${className || ""}`}>
         <Carousel className="w-full">
           <CarouselContent>

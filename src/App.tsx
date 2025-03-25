@@ -11,6 +11,7 @@ import Billiards from "./pages/Billiards";
 import NotFound from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
 import { ScrollToTop } from "./components/ScrollToTop";
+import { Footer } from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +32,7 @@ const App = () => (
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
+          <Footer />
           <ScrollToTop />
         </div>
       </BrowserRouter>

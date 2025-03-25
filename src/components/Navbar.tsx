@@ -22,6 +22,7 @@ export function Navbar() {
     setIsOpen(false);
   }, [location.pathname]);
 
+  // Updated order with Billiards first
   const navLinks = [
     { name: "Главная", path: "/" },
     { name: "Бильярд", path: "/billiards" },
@@ -38,7 +39,7 @@ export function Navbar() {
       case '/billiards':
         return "+7 (495) 908-92-45";
       default:
-        return "+7 (967) 131-17-83"; // Default number for homepage (changed to Mafia number)
+        return "+7 (967) 131-17-83"; // Default number for homepage (Mafia number)
     }
   };
 

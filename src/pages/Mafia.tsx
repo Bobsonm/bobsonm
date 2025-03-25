@@ -108,12 +108,21 @@ const Mafia = () => {
             </h2>
           </AnimatedSection>
           
+          <AnimatedSection delay={700} direction="up">
+            <div className="glass-panel p-4 rounded-lg inline-block border border-bobsonm-gold/40 mb-6 max-w-md">
+              <div className="flex items-center justify-center">
+                <Calendar size={20} className="text-bobsonm-gold mr-2" />
+                <p className="text-white font-medium">Играем по вторникам и субботам</p>
+              </div>
+            </div>
+          </AnimatedSection>
+          
           <AnimatedSection delay={900}>
             <a
               href="https://t.me/Bobsonm_lounge"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-md bg-bobsonm-gold text-bobsonm-black hover:bg-bobsonm-goldLight transition-colors px-6 py-3 mt-6 font-medium"
+              className="inline-flex items-center justify-center rounded-md bg-bobsonm-gold text-bobsonm-black hover:bg-bobsonm-goldLight transition-colors px-6 py-3 mt-2 font-medium"
             >
               <MessageCircle size={20} className="mr-2" />
               Записаться на игру

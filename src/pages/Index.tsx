@@ -21,7 +21,7 @@ const Index = () => {
     {
       title: "Bobsonm Бильярд",
       description: "Профессиональные столы, уютная атмосфера и превосходный сервис — идеальное место для игры с друзьями.",
-      imageSrc: "/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png",
+      imageSrc: "/lovable-uploads/27d63064-76a3-4c33-a75d-fccc6022f2aa.png", // Updated image
       linkTo: "/billiards"
     },
     {
@@ -34,6 +34,28 @@ const Index = () => {
       title: "Bobsonm Mafia",
       description: "Интеллектуальная игра с профессиональными ведущими. Раскрой в себе талант стратега или актёрское мастерство.",
       imageSrc: "/lovable-uploads/f2c1b295-9a6e-4390-8ea7-8671297c8dbe.png",
+      linkTo: "/mafia"
+    }
+  ];
+
+  // Venue data for the "Наши заведения" section
+  const venues = [
+    {
+      name: "Bobsonm Бильярд",
+      address: "Москва, ул. Пестеля, 8А",
+      phone: "+7 (495) 908-92-45",
+      linkTo: "/billiards"
+    },
+    {
+      name: "Bobsonm Lounge",
+      address: "Москва, Международная улица 15А",
+      phone: "+7 (901) 417-22-93",
+      linkTo: "/lounge"
+    },
+    {
+      name: "Bobsonm Mafia",
+      address: "Москва, Международная улица 15А",
+      phone: "+7 (967) 131-17-83",
       linkTo: "/mafia"
     }
   ];
@@ -77,7 +99,7 @@ const Index = () => {
             </p>
           </AnimatedSection>
           
-          {/* Scroll down indicator */}
+          {/* Scroll down indicator - moved down */}
           <AnimatedSection delay={1800} className="absolute bottom-10 left-1/2 transform -translate-x-1/2">
             <button 
               onClick={() => {
@@ -123,7 +145,7 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Atmosphere section */}
+      {/* Atmosphere section with venue links */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-bobsonm-navy/10" />
         <div className="bobsonm-container px-4 relative z-10">
@@ -143,13 +165,21 @@ const Index = () => {
             </AnimatedSection>
             
             <AnimatedSection direction="up" delay={400}>
-              <a 
-                href="tel:+79671311783" 
-                className="inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors"
-              >
-                +7 (967) 131-17-83
-                <ArrowDown size={18} className="ml-2 rotate-90" />
-              </a>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                {venues.map((venue, index) => (
+                  <Link 
+                    key={index} 
+                    to={venue.linkTo}
+                    className="glass-panel p-6 rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-gold/40 transition-all hover:translate-y-[-5px] group"
+                  >
+                    <h3 className="font-serif font-semibold text-xl mb-3 text-white group-hover:text-bobsonm-gold transition-colors">
+                      {venue.name}
+                    </h3>
+                    <p className="text-white/80 mb-3 text-sm">{venue.address}</p>
+                    <p className="text-bobsonm-gold text-sm">{venue.phone}</p>
+                  </Link>
+                ))}
+              </div>
             </AnimatedSection>
           </div>
         </div>
