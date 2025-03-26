@@ -1,8 +1,10 @@
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionCard } from "@/components/SectionCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -98,18 +100,21 @@ const Index = () => {
             </p>
           </AnimatedSection>
           
-          {/* Scroll down indicator - moved below the text */}
-          <AnimatedSection delay={1200}>
-            <button 
-              onClick={() => {
-                document.getElementById('sections')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="flex flex-col items-center text-white/60 hover:text-white transition-colors animate-floating mt-8"
-              aria-label="Scroll down"
-            >
-              <span className="text-sm mb-2">Исследовать</span>
-              <ArrowDown size={20} />
-            </button>
+          {/* Centered explore button */}
+          <AnimatedSection delay={1200} direction="up">
+            <div className="flex justify-center mt-8">
+              <Button
+                onClick={() => {
+                  document.getElementById('sections')?.scrollIntoView({ behavior: 'smooth' });
+                }}
+                variant="outline"
+                className="border-bobsonm-gold/40 text-bobsonm-gold hover:bg-bobsonm-gold/10 hover:border-bobsonm-gold flex items-center gap-2 group"
+                aria-label="Исследовать"
+              >
+                <span>Исследовать</span>
+                <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
+              </Button>
+            </div>
           </AnimatedSection>
         </div>
       </section>
