@@ -1,3 +1,4 @@
+
 import { AnimatedSection } from "./AnimatedSection";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 interface FoodMenuCarouselProps {
@@ -16,12 +17,12 @@ export function FoodMenuCarousel({
   return <AnimatedSection direction="up">
       {title && <h4 className="text-xl font-serif font-semibold mb-4 text-bobsonm-gold text-center">{title}</h4>}
       <div className="my-0 px-0 py-0 rounded-md">
-        <Carousel className="w-full">
+        <Carousel className="w-full max-w-3xl mx-auto">
           <CarouselContent>
             {images.map((image, index) => <CarouselItem key={index}>
                 <div className="p-1">
                   <div className="overflow-hidden rounded-lg">
-                    <img src={image.src} alt={image.alt} className="w-full h-auto hover:scale-105 transition-transform duration-150 object-scale-down" />
+                    <img src={image.src} alt={image.alt} className="w-full h-auto max-h-[70vh] hover:scale-105 transition-transform duration-150 object-contain" />
                   </div>
                 </div>
               </CarouselItem>)}

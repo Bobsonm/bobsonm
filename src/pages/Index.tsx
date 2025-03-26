@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionCard } from "@/components/SectionCard";
@@ -21,7 +20,7 @@ const Index = () => {
     {
       title: "Bobsonm Бильярд",
       description: "Профессиональные столы, уютная атмосфера и превосходный сервис — идеальное место для игры с друзьями.",
-      imageSrc: "/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png",
+      imageSrc: "/lovable-uploads/fb650412-d0a2-43da-be15-eab134870a5d.png",
       linkTo: "/billiards"
     },
     {
@@ -159,7 +158,7 @@ const Index = () => {
             <AnimatedSection direction="up" delay={200}>
               <p className="text-white mb-10">
                 Bobsonm — это не просто место, а настроение. Здесь каждая деталь продумана для того, 
-                чтобы вы чувствовали себя особенными. Приходите с друзьями или коллегами и создавайте 
+                ��тобы вы чувствовали себя особенными. Приходите с друзьями или коллегами и создавайте 
                 новые воспоминания в нашем пространстве.
               </p>
             </AnimatedSection>
