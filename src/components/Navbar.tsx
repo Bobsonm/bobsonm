@@ -94,7 +94,7 @@ export function Navbar() {
         </div>
       </div>
       
-      {/* Mobile menu */}
+      {/* Mobile menu - Updated with better contrast */}
       {isOpen && (
         <div className="md:hidden animate-fade-in">
           <div className="pt-2 pb-4 px-4 space-y-3 border-t border-bobsonm-navy/50">
@@ -105,8 +105,8 @@ export function Navbar() {
                 className={cn(
                   "block py-2 px-3 rounded-md transition-colors",
                   location.pathname === link.path 
-                    ? "bg-bobsonm-navy/20 text-bobsonm-gold" 
-                    : "hover:bg-bobsonm-navy/10 hover:text-bobsonm-gold"
+                    ? "bg-bobsonm-gold/80 text-white font-medium" 
+                    : "bg-bobsonm-navy/30 text-white hover:bg-bobsonm-gold/50"
                 )}
               >
                 {link.name}
@@ -115,7 +115,7 @@ export function Navbar() {
             
             <a 
               href={`tel:${getPhoneNumber().replace(/\D/g, '')}`} 
-              className="flex items-center gap-2 py-2 px-3 text-bobsonm-gold"
+              className="flex items-center gap-2 py-2 px-3 text-bobsonm-gold bg-bobsonm-navy/40 rounded-md"
             >
               <Phone size={16} />
               <span>{getPhoneNumber()}</span>
