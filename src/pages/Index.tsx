@@ -1,24 +1,21 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionCard } from "@/components/SectionCard";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
 const Index = () => {
   const [isLoaded, setIsLoaded] = useState(false);
-  useEffect(() => {
-    // Trigger animations after component mounts
-    setIsLoaded(true);
 
-    // Smooth scroll to top when component mounts
+  useEffect(() => {
+    setIsLoaded(true);
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   }, []);
 
-  // Section data
   const sections = [{
     title: "Bobsonm Бильярд",
     description: "Профессиональные столы, уютная атмосфера и превосходный сервис — идеальное место для игры с друзьями.",
@@ -36,7 +33,6 @@ const Index = () => {
     linkTo: "/mafia"
   }];
 
-  // Venue data for the "Наши заведения" section
   const venues = [{
     name: "Bobsonm Бильярд",
     address: "Москва, ул. Братиславская 27к1",
@@ -53,16 +49,14 @@ const Index = () => {
     phone: "+7 (967) 131-17-83",
     linkTo: "/mafia"
   }];
+
   return <div className="flex flex-col min-h-screen bg-bobsonm-black">
-      {/* Hero section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Background image with overlay */}
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
         backgroundImage: "url(https://images.unsplash.com/photo-1577845442986-8557a2335be8?q=80&w=1074&auto=format&fit=crop)"
       }} />
         <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/90 via-bobsonm-black/70 to-bobsonm-black" />
         
-        {/* Content */}
         <div className="relative bobsonm-container text-center z-10 px-4 mt-16">
           <AnimatedSection delay={300} className={`transition-all duration-1000 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 animate-text-shine">
@@ -84,19 +78,20 @@ const Index = () => {
               Три уникальных направления — одно пространство для вашего идеального отдыха.
             </p>
             
-            <Button onClick={() => {
-              document.getElementById('sections')?.scrollIntoView({
-                behavior: 'smooth'
-              });
-            }} variant="outline" className="border-bobsonm-gold/40 text-bobsonm-gold hover:bg-bobsonm-gold/10 hover:border-bobsonm-gold flex items-center gap-2 group mt-2" aria-label="Исследовать">
-              <span>Исследовать</span>
-              <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
-            </Button>
+            <div className="flex justify-center">
+              <Button onClick={() => {
+                document.getElementById('sections')?.scrollIntoView({
+                  behavior: 'smooth'
+                });
+              }} variant="ghost" className="text-bobsonm-gold hover:bg-transparent hover:text-bobsonm-gold/80 flex items-center gap-2 group mt-2" aria-label="Исследовать">
+                <span>Исследовать</span>
+                <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
+              </Button>
+            </div>
           </AnimatedSection>
         </div>
       </section>
       
-      {/* Sections */}
       <section id="sections" className="bobsonm-container py-20 px-4">
         <AnimatedSection direction="up">
           <h2 className="text-3xl sm:text-4xl font-serif font-semibold mb-4 text-center text-bobsonm-gold">
@@ -118,7 +113,6 @@ const Index = () => {
         </div>
       </section>
       
-      {/* Atmosphere section with venue links */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-bobsonm-navy/10" />
         <div className="bobsonm-container px-4 relative z-10">
@@ -149,4 +143,5 @@ const Index = () => {
       </section>
     </div>;
 };
+
 export default Index;
