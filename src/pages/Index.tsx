@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { SectionCard } from "@/components/SectionCard";
@@ -78,24 +79,19 @@ const Index = () => {
           </AnimatedSection>
           
           <AnimatedSection delay={900} direction="up">
-            <p className="text-white max-w-2xl mx-auto mb-14 text-balance">
+            <p className="text-white max-w-2xl mx-auto mb-8 text-balance">
               Место, где соединяются лаундж с кальянами и вкусной кухней, интеллектуальный азарт мафии и спортивное мастерство бильярда. 
               Три уникальных направления — одно пространство для вашего идеального отдыха.
             </p>
-          </AnimatedSection>
-          
-          {/* Centered explore button */}
-          <AnimatedSection delay={1200} direction="up">
-            <div className="flex justify-center mt-8">
-              <Button onClick={() => {
+            
+            <Button onClick={() => {
               document.getElementById('sections')?.scrollIntoView({
                 behavior: 'smooth'
               });
-            }} variant="outline" className="border-bobsonm-gold/40 text-bobsonm-gold hover:bg-bobsonm-gold/10 hover:border-bobsonm-gold flex items-center gap-2 group" aria-label="Исследовать">
-                <span>Исследовать</span>
-                <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
-              </Button>
-            </div>
+            }} variant="outline" className="border-bobsonm-gold/40 text-bobsonm-gold hover:bg-bobsonm-gold/10 hover:border-bobsonm-gold flex items-center gap-2 group mt-2" aria-label="Исследовать">
+              <span>Исследовать</span>
+              <ArrowDown size={18} className="group-hover:translate-y-1 transition-transform" />
+            </Button>
           </AnimatedSection>
         </div>
       </section>
