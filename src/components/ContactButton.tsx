@@ -31,6 +31,8 @@ export function ContactButton({
         return "+7 (901) 417-22-93";
       case '/mafia':
         return "+7 (967) 131-17-83";
+      case '/gastrobar':
+        return "+7 (967) 131-17-83";
       case '/billiards':
         return "+7 (495) 908-92-45";
       default:

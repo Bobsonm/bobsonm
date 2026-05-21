@@ -28,6 +28,7 @@ export function Navbar() {
     { name: "Бильярд", path: "/billiards" },
     { name: "Lounge", path: "/lounge" },
     { name: "Mafia", path: "/mafia" },
+    { name: "Гастробар", path: "/gastrobar" },
   ];
 
   const getPhoneNumber = () => {
@@ -35,6 +36,8 @@ export function Navbar() {
       case '/lounge':
         return "+7 (901) 417-22-93";
       case '/mafia':
+        return "+7 (967) 131-17-83";
+      case '/gastrobar':
         return "+7 (967) 131-17-83";
       case '/billiards':
         return "+7 (495) 908-92-45";

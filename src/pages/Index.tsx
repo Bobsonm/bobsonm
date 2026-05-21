@@ -31,6 +31,11 @@ const Index = () => {
     description: "Интеллектуальная игра с профессиональными ведущими. Раскрой в себе талант стратега или актёрское мастерство.",
     imageSrc: "/lovable-uploads/f2c1b295-9a6e-4390-8ea7-8671297c8dbe.png",
     linkTo: "/mafia"
+  }, {
+    title: "Bobsonm Гастробар",
+    description: "Авторская кухня, бар и тёплая атмосфера вечера. Идеальное место для ужина и встреч с друзьями.",
+    imageSrc: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1470&auto=format&fit=crop",
+    linkTo: "/gastrobar"
   }];
 
   const venues = [{
@@ -48,6 +53,11 @@ const Index = () => {
     address: "Москва, Международная улица 15А",
     phone: "+7 (967) 131-17-83",
     linkTo: "/mafia"
+  }, {
+    name: "Bobsonm Гастробар",
+    address: "Москва, Нахимовский проспект 35к2",
+    phone: "+7 (967) 131-17-83",
+    linkTo: "/gastrobar"
   }];
 
   return <div className="flex flex-col min-h-screen bg-bobsonm-black">

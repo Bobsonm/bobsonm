@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Billiards from "./pages/Billiards";
 import Lounge from "./pages/Lounge";
 import Mafia from "./pages/Mafia";
+import Gastrobar from "./pages/Gastrobar";
 import NotFound from "./pages/NotFound";
 import { Navbar } from "./components/Navbar";
 import { ScrollToTop } from "./components/ScrollToTop";
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/billiards" element={<Billiards />} />
               <Route path="/lounge" element={<Lounge />} />
               <Route path="/mafia" element={<Mafia />} />
+              <Route path="/gastrobar" element={<Gastrobar />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>
