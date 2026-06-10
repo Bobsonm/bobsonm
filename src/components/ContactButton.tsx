@@ -52,16 +52,18 @@ export function ContactButton({
   
   // Variant classes
   const variantClasses = {
-    primary: "bg-bobsonm-gold text-bobsonm-black hover:bg-bobsonm-goldLight focus:ring-2 focus:ring-bobsonm-gold focus:ring-offset-2 focus:ring-offset-bobsonm-black",
-    outline: "bg-transparent border border-bobsonm-gold text-bobsonm-gold hover:bg-bobsonm-gold/10 focus:ring-2 focus:ring-bobsonm-gold focus:ring-offset-2 focus:ring-offset-bobsonm-black",
-    ghost: "bg-transparent text-bobsonm-gold hover:bg-bobsonm-gold/10 focus:ring-1 focus:ring-bobsonm-gold",
+    primary:
+      "border border-primary/60 bg-primary text-primary-foreground shadow-[0_18px_45px_-24px_hsl(var(--primary)/0.8)] hover:bg-primary/90 hover:border-primary focus:ring-primary focus:ring-offset-background",
+    outline:
+      "border border-primary/40 bg-transparent text-primary hover:bg-primary/10 hover:border-primary focus:ring-primary focus:ring-offset-background",
+    ghost: "bg-transparent text-primary hover:bg-primary/10 focus:ring-primary focus:ring-offset-background",
   };
   
   return (
     <a
       href={`tel:${cleanPhone}`}
       className={cn(
-        "inline-flex items-center justify-center rounded-md font-medium transition-all",
+        "inline-flex items-center justify-center rounded-full font-medium transition-all duration-500",
         sizeClasses[size],
         variantClasses[variant],
         className

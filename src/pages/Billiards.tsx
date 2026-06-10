@@ -1,13 +1,14 @@
 
 import { useEffect } from "react";
-import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
 import { BookFlipMenu } from "@/components/BookFlipMenu";
 import { YandexMap } from "@/components/YandexMap";
 import { VipRoomCarousel } from "@/components/VipRoomCarousel";
+import { FadeUp, Reveal } from "@/components/ParallaxSection";
+import { VenueHero } from "@/components/VenueHero";
 import { Separator } from "@/components/ui/separator";
-import { Clock, MapPin, Phone, Aperture, CircleDollarSign, Music } from "lucide-react";
+import { Aperture, ArrowRight, CircleDollarSign, Clock, MapPin, Music, Phone } from "lucide-react";
 
 const Billiards = () => {
   useEffect(() => {
@@ -150,117 +151,89 @@ const Billiards = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen bg-bobsonm-black pt-16 md:pt-20">
-      {/* Hero section */}
-      <section className="relative flex items-center justify-center h-[60vh] overflow-hidden">
-        {/* Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url(/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png)",
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/70 via-bobsonm-black/50 to-bobsonm-black" />
-        
-        {/* Content */}
-        <div className="relative bobsonm-container text-center z-10 px-4">
-          <AnimatedSection delay={300}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 animate-text-shine">
-              Bobsonm <span className="text-bobsonm-gold">Бильярд</span>
-            </h1>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={600} direction="up">
-            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 text-white max-w-3xl mx-auto">
-              Игра для настоящих ценителей точности и стратегии
-            </h2>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={900}>
-            <ContactButton 
-              size="lg" 
-              phoneNumber="+7 (495) 908-92-45"
-              className="mt-6"
-            >
-              Забронировать стол
-            </ContactButton>
-          </AnimatedSection>
-        </div>
-      </section>
-      
-      {/* About section */}
-      <section className="bobsonm-container py-20 px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AnimatedSection direction="right">
-            <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
-              <img 
-                src="/lovable-uploads/4b707d43-5bd5-436a-943e-b533a4db2de4.png" 
-                alt="Бильярдный клуб Bobsonm" 
-                className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700"
-              />
+    <div className="min-h-screen bg-background pt-16 text-foreground md:pt-20">
+      <VenueHero
+        eyebrow="Billiards direction"
+        title="Bobsonm"
+        accent="Бильярд"
+        description="Профессиональные столы, тихая концентрация и выверенный свет для тех, кто ценит точность удара и приватный ритм игры."
+        imageSrc="/lovable-uploads/617094a2-8411-482d-8e95-1af32aabf384.png"
+        imageAlt="Bobsonm Бильярд"
+        actions={
+          <>
+            <ContactButton size="lg" phoneNumber="+7 (495) 908-92-45">Позвонить и забронировать</ContactButton>
+            <a href="#pricing" className="group inline-flex items-center gap-3 border-b border-primary/30 pb-2 text-primary transition-all hover:border-primary">
+              <span className="text-xs uppercase tracking-[0.3em]">Цены</span>
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+            </a>
+          </>
+        }
+        stats={[
+          { label: "Столы", value: "8 русских + 3 pool" },
+          { label: "VIP", value: "отдельная комната 70 м²" },
+          { label: "Сукно", value: "Iwan Simonis" },
+        ]}
+      />
+
+      <section className="bobsonm-container py-20">
+        <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-16">
+          <Reveal>
+            <div className="premium-card p-3 sm:p-4">
+              <img src="/lovable-uploads/4b707d43-5bd5-436a-943e-b533a4db2de4.png" alt="Бильярдный клуб Bobsonm" className="aspect-[4/5] w-full rounded-[1.2rem] object-cover" />
             </div>
-          </AnimatedSection>
-          
-          <AnimatedSection direction="left">
-            <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">О нашем бильярдном клубе</h3>
-            <p className="text-white mb-6">
-              Bobsonm Бильярд — это пространство для истинных ценителей культуры бильярдной игры. 
-              Наш клуб оборудован профессиональными столами как для русского бильярда, так и для американского пула, 
-              что позволяет каждому выбрать свой стиль игры.
-            </p>
-            <p className="text-white mb-8">
-              У нас созданы идеальные условия для игры: идеально выровненные столы с качественным сукном, 
-              правильное освещение без бликов и теней, комфортное пространство между столами и приятная 
-              атмосфера. Наш клуб подходит как для профессиональных игроков, так и для начинающих.
-            </p>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                <Clock className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-white">Время работы</span>
-                <span className="font-medium text-white">Будни: 14:00-03:00</span>
-                <span className="text-xs text-bobsonm-gold mt-1">Пт-Вс: 13:00-03:00</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                <Aperture className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-white">Всего столов</span>
-                <span className="font-medium text-white">10 + VIP комната</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                <Music className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-white">VIP-комната</span>
-                <span className="font-medium text-white">С караоке</span>
-              </div>
+          </Reveal>
+          <div>
+            <FadeUp>
+              <p className="mb-4 text-[10px] uppercase tracking-[0.42em] text-primary/78">О клубе</p>
+              <h2 className="text-3xl sm:text-5xl">Игра без компромиссов</h2>
+            </FadeUp>
+            <FadeUp delay={0.12}><div className="mb-6 mt-5 w-20 gold-divider" /></FadeUp>
+            <FadeUp delay={0.2}>
+              <p className="mb-5 text-base leading-relaxed text-foreground/72 sm:text-lg">Bobsonm Бильярд оборудован для тех, кому важны геометрия столов, правильный свет и свободное пространство вокруг каждого удара.</p>
+              <p className="text-base leading-relaxed text-foreground/62 sm:text-lg">Здесь одинаково комфортно и опытным игрокам, и гостям, которые хотят провести вечер спокойно, приватно и красиво.</p>
+            </FadeUp>
+            <div className="mt-8 grid gap-4 sm:grid-cols-3">
+              {[
+                { icon: Clock, label: "Режим", value: "будни 14:00–03:00" },
+                { icon: Aperture, label: "Фонд", value: "10 столов + VIP" },
+                { icon: Music, label: "Комфорт", value: "VIP с караоке" },
+              ].map((item, index) => (
+                <FadeUp key={item.label} delay={0.3 + index * 0.08}>
+                  <div className="glass-panel rounded-lg p-4">
+                    <item.icon className="mb-3 text-primary" size={22} />
+                    <p className="text-[10px] uppercase tracking-[0.32em] text-primary/75">{item.label}</p>
+                    <p className="mt-2 text-sm leading-relaxed text-foreground/72">{item.value}</p>
+                  </div>
+                </FadeUp>
+              ))}
             </div>
-          </AnimatedSection>
+          </div>
         </div>
       </section>
       
       {/* Tables section */}
-      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
+      <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
         <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Наши столы</h3>
-            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Наши столы</h2>
+            <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
               Профессиональное оборудование для комфортной игры
             </p>
-          </AnimatedSection>
+          </FadeUp>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {tables.map((table, index) => (
-              <AnimatedSection key={index} direction="up" delay={200 * index}>
-                <div className="glass-panel p-8 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-all hover:translate-y-[-5px]">
-                  <h4 className="text-2xl font-medium text-bobsonm-gold mb-4">{table.type}</h4>
+              <Reveal key={index}>
+                <div className="premium-card h-full p-8">
+                  <h3 className="text-2xl text-gold-shine">{table.type}</h3>
                   <div className="mb-4">
-                    <span className="text-3xl font-semibold text-white">{table.count}</span>
-                    <span className="text-white ml-2">{table.count === 1 ? 'стол' : 'столов'}</span>
+                    <span className="text-3xl text-foreground">{table.count}</span>
+                    <span className="ml-2 text-foreground/70">{table.count === 1 ? 'стол' : 'столов'}</span>
                   </div>
-                  <p className="text-white mb-4">{table.description}</p>
-                  <p className="text-white text-sm border-t border-bobsonm-navy/30 pt-4 mt-4">{table.features}</p>
+                  <p className="mb-4 text-foreground/72">{table.description}</p>
+                  <p className="mt-4 border-t border-border pt-4 text-sm text-foreground/58">{table.features}</p>
                 </div>
-              </AnimatedSection>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -268,31 +241,31 @@ const Billiards = () => {
       
       {/* VIP Room section */}
       <section className="py-20 bobsonm-container px-4">
-        <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">VIP-комната</h3>
-          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+        <FadeUp>
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">VIP-комната</h2>
+          <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
             Для наших любимых гостей
           </p>
-        </AnimatedSection>
+        </FadeUp>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <VipRoomCarousel images={vipRoomImages} />
           
-          <AnimatedSection direction="left">
-            <div className="glass-panel p-8 rounded-lg border border-bobsonm-navy/30">
-              <h4 className="text-2xl font-medium text-bobsonm-gold mb-6">ВИП-КОМНАТА ДЛЯ ГОСТЕЙ</h4>
-              <p className="text-white mb-6">
+          <Reveal>
+            <div className="premium-card p-8">
+              <h3 className="text-2xl text-gold-shine">Приватный сценарий вечера</h3>
+              <p className="mb-6 mt-6 text-foreground/72">
                 Также, для наших любимых гостей у нас есть ВИП-КОМНАТА!
                 Более 70 метров. Отличный 12 футовый стол, зона отдыха с профессиональным караоке. 
                 В вип лаундже свой туалет и комната для курения.
               </p>
-              <p className="text-white mb-8">
+              <p className="mb-8 text-foreground/62">
                 Если вы хотите провести вечер в компании только своих друзей, или в паре, 
                 то вип-комната самый подходящий вариант. Здесь ни что не отвлекает.
               </p>
               
-              <div className="text-center animate-pulse-subtle">
-                <p className="text-xl font-serif mb-4 text-white">Звони и бронируй!</p>
+              <div className="text-center">
+                <p className="mb-4 text-xl text-foreground">Звони и бронируй</p>
                 <ContactButton 
                   size="lg" 
                   variant="primary" 
@@ -303,43 +276,43 @@ const Billiards = () => {
                 </ContactButton>
               </div>
             </div>
-          </AnimatedSection>
+          </Reveal>
         </div>
       </section>
       
       {/* Pricing section */}
-      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/15 to-bobsonm-navy/5">
+      <section id="pricing" className="py-20 bg-gradient-to-b from-secondary/25 to-background">
         <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Цены на игру</h3>
-            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Цены на игру</h2>
+            <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
               Прозрачная система оплаты без скрытых платежей
             </p>
-          </AnimatedSection>
+          </FadeUp>
           
           <div className="max-w-4xl mx-auto">
             {pricing.map((category, categoryIndex) => (
-              <AnimatedSection key={categoryIndex} direction="up" delay={200 * categoryIndex}>
-                <div className="mb-10">
-                  <h4 className="text-2xl font-serif font-medium mb-6 text-bobsonm-gold">{category.title}</h4>
+              <Reveal key={categoryIndex}>
+                <div className="mb-10 premium-card p-8">
+                  <h3 className="mb-6 text-2xl text-gold-shine">{category.title}</h3>
                   <div className="space-y-4">
                     {category.prices.map((item, itemIndex) => (
-                      <div key={itemIndex} className="flex justify-between items-center border-b border-bobsonm-navy/30 pb-4">
+                      <div key={itemIndex} className="flex items-center justify-between border-b border-border pb-4">
                         <div className="flex items-center">
-                          <CircleDollarSign size={18} className="text-bobsonm-gold mr-3" />
-                          <span className="text-white">{item.time}</span>
+                          <CircleDollarSign size={18} className="mr-3 text-primary" />
+                          <span className="text-foreground/72">{item.time}</span>
                         </div>
-                        <div className="text-bobsonm-gold font-medium">{item.price}</div>
+                        <div className="font-medium text-primary">{item.price}</div>
                       </div>
                     ))}
                   </div>
                   {category.title === "Русский бильярд" || category.title === "Американский пул" ? (
-                    <p className="text-white/70 text-sm mt-2 text-right italic">
+                    <p className="mt-2 text-right text-sm italic text-foreground/52">
                       * Игры после 03:00 должны быть согласованы с администратором
                     </p>
                   ) : null}
                 </div>
-              </AnimatedSection>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -347,12 +320,12 @@ const Billiards = () => {
       
       {/* Menu section */}
       <section className="py-20 bobsonm-container px-4">
-        <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Меню</h3>
-          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+        <FadeUp>
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Меню</h2>
+          <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
             Насладитесь нашей кухней и напитками во время игры
           </p>
-        </AnimatedSection>
+        </FadeUp>
         
         <div className="max-w-5xl mx-auto">
           <BookFlipMenu tabs={menuScans} />
@@ -360,14 +333,14 @@ const Billiards = () => {
       </section>
       
       {/* Gallery section */}
-      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
+      <section className="py-20 bg-gradient-to-b from-secondary/20 to-background">
         <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Галерея</h3>
-            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Галерея</h2>
+            <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
               Интерьер и атмосфера Bobsonm Бильярд
             </p>
-          </AnimatedSection>
+          </FadeUp>
           
           <Gallery images={billiardsImages} columns={3} gap="md" />
         </div>
@@ -375,44 +348,44 @@ const Billiards = () => {
       
       {/* Contacts */}
       <section className="py-20 bobsonm-container px-4">
-        <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Контакты</h3>
-          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+        <FadeUp>
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Контакты</h2>
+          <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
             Забронируйте стол в Bobsonm Бильярд
           </p>
-        </AnimatedSection>
+        </FadeUp>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <AnimatedSection direction="right" delay={200}>
-            <div className="glass-panel p-8 rounded-lg border border-bobsonm-navy/30">
+          <Reveal>
+            <div className="premium-card p-8">
               <div className="flex items-center mb-6">
-                <Phone size={24} className="text-bobsonm-gold mr-4" />
+                <Phone size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Телефон для бронирования</h4>
-                  <a href="tel:+74959089245" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
+                  <h3 className="font-medium text-foreground">Телефон для бронирования</h3>
+                  <a href="tel:+74959089245" className="text-xl text-gold-shine hover:opacity-80">
                     +7 (495) 908-92-45
                   </a>
                 </div>
               </div>
               
-              <Separator className="my-6 bg-bobsonm-navy/30" />
+              <Separator className="my-6 bg-border" />
               
               <div className="flex items-center mb-6">
-                <Clock size={24} className="text-bobsonm-gold mr-4" />
+                <Clock size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Время работы</h4>
-                  <p className="text-white">Будни с 14:00 до 03:00</p>
-                  <p className="text-sm text-bobsonm-gold">Пт-Вс с 13:00 до 03:00</p>
+                  <h3 className="font-medium text-foreground">Время работы</h3>
+                  <p className="text-foreground/75">Будни с 14:00 до 03:00</p>
+                  <p className="text-sm text-primary/80">Пт-Вс с 13:00 до 03:00</p>
                 </div>
               </div>
               
-              <Separator className="my-6 bg-bobsonm-navy/30" />
+              <Separator className="my-6 bg-border" />
               
               <div className="flex items-center">
-                <MapPin size={24} className="text-bobsonm-gold mr-4" />
+                <MapPin size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Адрес</h4>
-                  <p className="text-white">Москва, ул. Братиславская 27к1</p>
+                  <h3 className="font-medium text-foreground">Адрес</h3>
+                  <p className="text-foreground/75">Москва, ул. Братиславская 27к1</p>
                 </div>
               </div>
               
@@ -427,11 +400,11 @@ const Billiards = () => {
                 </ContactButton>
               </div>
             </div>
-          </AnimatedSection>
+          </Reveal>
           
-          <AnimatedSection direction="left" delay={400}>
+          <Reveal>
             <YandexMap src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=49034132925" />
-          </AnimatedSection>
+          </Reveal>
         </div>
       </section>
     </div>

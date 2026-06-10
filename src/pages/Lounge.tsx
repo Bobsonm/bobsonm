@@ -1,13 +1,14 @@
 
 import { useEffect } from "react";
-import { AnimatedSection } from "@/components/AnimatedSection";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
 import { YandexMap } from "@/components/YandexMap";
 import { BookFlipMenu } from "@/components/BookFlipMenu";
+import { FadeUp, Reveal } from "@/components/ParallaxSection";
+import { VenueHero } from "@/components/VenueHero";
 import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
+import { ArrowRight, Calendar, Clock, ExternalLink, Flame, MapPin, Music, Phone, Users } from "lucide-react";
 
 const Lounge = () => {
   useEffect(() => {
@@ -203,99 +204,43 @@ const Lounge = () => {
   }];
   
   return (
-    <div className="flex flex-col min-h-screen bg-bobsonm-black pt-16 md:pt-20">
-      {/* Hero section */}
-      <section className="relative flex items-center justify-center h-[60vh] overflow-hidden">
-        {/* Background */}
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url(/lovable-uploads/adb9981e-55c4-4f48-8d78-0eae2fb0fe09.png)"
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-bobsonm-black/70 via-bobsonm-black/50 to-bobsonm-black" />
-        
-        {/* Content */}
-        <div className="relative bobsonm-container text-center z-10 px-4">
-          <AnimatedSection delay={300}>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif font-bold mb-6 animate-text-shine">
-              Bobsonm <span className="text-bobsonm-gold">Lounge</span>
-            </h1>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={600} direction="up">
-            <h2 className="text-xl sm:text-2xl md:text-3xl mb-6 text-white max-w-3xl mx-auto">
-              Расслабьтесь в атмосфере изысканного комфорта
-            </h2>
-          </AnimatedSection>
-          
-          <AnimatedSection delay={900}>
-            <ContactButton size="lg" phoneNumber="+7 (901) 417-22-93" className="mt-6">
-              Забронировать стол
+    <div className="min-h-screen bg-background pt-16 text-foreground md:pt-20">
+      <VenueHero
+        eyebrow="Lounge direction"
+        title="Bobsonm"
+        accent="Lounge"
+        description="Кальянный ритуал, мягкий свет и долгие разговоры в пространстве, где вечер ощущается собранным и дорогим."
+        imageSrc="/lovable-uploads/adb9981e-55c4-4f48-8d78-0eae2fb0fe09.png"
+        imageAlt="Интерьер Bobsonm Lounge"
+        actions={
+          <>
+            <ContactButton size="lg" phoneNumber="+7 (901) 417-22-93">
+              Позвонить и забронировать
             </ContactButton>
-          </AnimatedSection>
-        </div>
-      </section>
-      
-      {/* About section */}
-      <section className="bobsonm-container py-20 px-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-          <AnimatedSection direction="right">
-            <div className="overflow-hidden rounded-lg shadow-[0_0_25px_rgba(21,39,75,0.5)] border-2 border-bobsonm-navy/30">
-              <img 
-                alt="Атмосфера Bobsonm Lounge" 
-                className="w-full h-auto object-cover rounded-lg hover:scale-105 transition-transform duration-700" 
-                src="/lovable-uploads/7f313834-974b-40cc-9088-31bfedc73848.png" 
-              />
-            </div>
-          </AnimatedSection>
-          
-          <AnimatedSection direction="left">
-            <h3 className="text-3xl font-serif font-semibold mb-6 text-gradient-gold">О нашем Lounge</h3>
-            <p className="text-white mb-6">
-              Bobsonm Lounge — это уникальное пространство, где сочетаются стильный дизайн, 
-              мягкий свет и приятная музыка. Здесь вы можете расслабиться после напряженного дня, 
-              насладиться премиальными кальянами и изысканными напитками.
-            </p>
-            <p className="text-white mb-8">
-              Наш лаундж — идеальное место для встречи с друзьями, романтического вечера или 
-              деловой беседы в непринужденной обстановке. Опытные кальянные мастера и внимательный 
-              персонал создадут для вас атмосферу безупречного комфорта.
-            </p>
-            
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8">
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                <Clock className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-white">Работаем ежедневно</span>
-                <span className="font-medium text-white">13:00 - 01:00</span>
-                <span className="text-xs text-bobsonm-gold mt-1">Пт-Сб до 03:00</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                <Music className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-white">Mafia</span>
-                <span className="font-medium text-white">Игры по расписанию</span>
-              </div>
-              
-              <div className="flex flex-col items-center text-center p-4 glass-panel rounded-lg border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                <Users className="text-bobsonm-gold mb-3" size={24} />
-                <span className="text-sm text-white">До 100 гостей</span>
-                <span className="font-medium text-white">Уютные зоны</span>
-              </div>
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
+            <a href="#menu" className="group inline-flex items-center gap-3 border-b border-primary/30 pb-2 text-primary transition-all hover:border-primary">
+              <span className="text-xs uppercase tracking-[0.3em]">Меню</span>
+              <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
+            </a>
+          </>
+        }
+        stats={[
+          { label: "Режим", value: "ежедневно 13:00–01:00" },
+          { label: "Поздние часы", value: "пт–сб до 03:00" },
+          { label: "Формат", value: "lounge + кальян + бар" },
+        ]}
+      />
+
+      <LoungeStorySection />
       
       {/* Combined Menu section with tabs */}
-      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/5 to-bobsonm-navy/15">
+      <section id="menu" className="py-20 bg-gradient-to-b from-secondary/20 to-background">
         <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Меню</h3>
-            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Меню</h2>
+            <p className="mx-auto mt-3 max-w-2xl text-center text-foreground/68">
               Насладитесь нашей авторской кухней, изысканными напитками и премиальными кальянами
             </p>
-          </AnimatedSection>
+          </FadeUp>
           
           <div className="max-w-5xl mx-auto">
             <BookFlipMenu
@@ -310,49 +255,49 @@ const Lounge = () => {
       
       {/* Gallery section */}
       <section className="py-20 bobsonm-container px-4">
-        <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Галерея</h3>
-          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+        <FadeUp>
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Галерея</h2>
+          <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
             Погрузитесь в атмосферу Bobsonm Lounge
           </p>
-        </AnimatedSection>
+        </FadeUp>
         
         <Gallery images={loungeImages} columns={3} gap="md" />
       </section>
       
       {/* Promotions */}
-      <section className="py-20 bg-gradient-to-b from-bobsonm-navy/15 to-bobsonm-navy/5">
+      <section className="py-20 bg-gradient-to-b from-secondary/25 to-background">
         <div className="bobsonm-container px-4">
-          <AnimatedSection direction="up">
-            <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Акции и бонусы</h3>
-            <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Акции и бонусы</h2>
+            <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
               Специальные предложения для наших гостей
             </p>
-          </AnimatedSection>
+          </FadeUp>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {promotions.map((promo, index) => (
-              <AnimatedSection key={index} direction="up" delay={200 * index}>
-                <div className="glass-panel p-6 rounded-lg h-full border border-bobsonm-navy/30 hover:border-bobsonm-navy/60 transition-colors">
-                  <h4 className="font-semibold text-xl mb-2 text-bobsonm-gold">{promo.title}</h4>
-                  <p className="text-white mb-4">{promo.description}</p>
+              <Reveal key={index}>
+                <div className="premium-card h-full p-6">
+                  <h3 className="text-2xl text-gold-shine">{promo.title}</h3>
+                  <p className="mt-4 text-foreground/72">{promo.description}</p>
                   <div className="flex items-center mt-auto">
-                    <Calendar size={16} className="text-bobsonm-gold" />
-                    <span className="text-sm ml-2 text-bobsonm-goldLight">{promo.period}</span>
+                    <Calendar size={16} className="text-primary" />
+                    <span className="ml-2 text-sm text-primary/85">{promo.period}</span>
                   </div>
                   {promo.link && (
                     <a 
                       href={promo.link} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="mt-4 inline-flex items-center text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors text-sm"
+                      className="mt-4 inline-flex items-center text-primary transition-colors text-sm hover:text-primary/75"
                     >
                       Перейти к регистрации
                       <ExternalLink size={14} className="ml-2" />
                     </a>
                   )}
                 </div>
-              </AnimatedSection>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -360,56 +305,56 @@ const Lounge = () => {
       
       {/* Contacts */}
       <section className="py-20 bobsonm-container px-4">
-        <AnimatedSection direction="up">
-          <h3 className="text-3xl font-serif font-semibold mb-2 text-center text-gradient-gold">Контакты</h3>
-          <p className="text-white text-center mb-12 max-w-2xl mx-auto">
+        <FadeUp>
+          <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Контакты</h2>
+          <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
             Забронируйте стол в Bobsonm Lounge
           </p>
-        </AnimatedSection>
+        </FadeUp>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          <AnimatedSection direction="right" delay={200}>
-            <div className="glass-panel p-8 rounded-lg border border-bobsonm-navy/30">
+          <Reveal>
+            <div className="premium-card p-8">
               <div className="flex items-center mb-6">
-                <Phone size={24} className="text-bobsonm-gold mr-4" />
+                <Phone size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Телефон для бронирования</h4>
-                  <a href="tel:+79014172293" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
+                  <h3 className="font-medium text-foreground">Телефон для бронирования</h3>
+                  <a href="tel:+79014172293" className="text-xl text-gold-shine transition-colors hover:opacity-80">
                     +7 (901) 417-22-93
                   </a>
                 </div>
               </div>
               
-              <Separator className="my-6 bg-bobsonm-navy/30" />
+              <Separator className="my-6 bg-border" />
               
               <div className="flex items-center mb-6">
-                <Phone size={24} className="text-bobsonm-gold mr-4" />
+                <Flame size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Телефон управляющего</h4>
-                  <a href="tel:+79671311783" className="text-xl font-semibold text-bobsonm-gold hover:text-bobsonm-goldLight transition-colors">
+                  <h3 className="font-medium text-foreground">Телефон управляющего</h3>
+                  <a href="tel:+79671311783" className="text-xl text-gold-shine transition-colors hover:opacity-80">
                     +7 (967) 131-17-83
                   </a>
                 </div>
               </div>
               
-              <Separator className="my-6 bg-bobsonm-navy/30" />
+              <Separator className="my-6 bg-border" />
               
               <div className="flex items-center mb-6">
-                <Clock size={24} className="text-bobsonm-gold mr-4" />
+                <Clock size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Время работы</h4>
-                  <p className="text-white">Ежедневно с 13:00 до 01:00</p>
-                  <p className="text-sm text-bobsonm-gold">Пятница и суббота до 03:00</p>
+                  <h3 className="font-medium text-foreground">Время работы</h3>
+                  <p className="text-foreground/75">Ежедневно с 13:00 до 01:00</p>
+                  <p className="text-sm text-primary/80">Пятница и суббота до 03:00</p>
                 </div>
               </div>
               
-              <Separator className="my-6 bg-bobsonm-navy/30" />
+              <Separator className="my-6 bg-border" />
               
               <div className="flex items-center">
-                <MapPin size={24} className="text-bobsonm-gold mr-4" />
+                <MapPin size={24} className="mr-4 text-primary" />
                 <div>
-                  <h4 className="font-medium text-white">Адрес</h4>
-                  <p className="text-white">Москва, Международная улица 15А</p>
+                  <h3 className="font-medium text-foreground">Адрес</h3>
+                  <p className="text-foreground/75">Москва, Международная улица 15А</p>
                 </div>
               </div>
               
@@ -419,15 +364,72 @@ const Lounge = () => {
                 </ContactButton>
               </div>
             </div>
-          </AnimatedSection>
+          </Reveal>
           
-          <AnimatedSection direction="left" delay={400}>
+          <Reveal>
             <YandexMap src="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=2924377283" />
-          </AnimatedSection>
+          </Reveal>
         </div>
       </section>
     </div>
   );
 };
+
+function LoungeStorySection() {
+  const { scrollYProgress } = useScroll();
+  const imageY = useTransform(scrollYProgress, [0, 1], [0, -60]);
+
+  return (
+    <section className="bobsonm-container py-20">
+      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-16">
+        <Reveal>
+          <div className="premium-card p-3 sm:p-4">
+            <motion.div style={{ y: imageY }} className="overflow-hidden rounded-[1.2rem]">
+              <img
+                alt="Атмосфера Bobsonm Lounge"
+                className="aspect-[4/5] w-full object-cover"
+                src="/lovable-uploads/7f313834-974b-40cc-9088-31bfedc73848.png"
+              />
+            </motion.div>
+          </div>
+        </Reveal>
+
+        <div>
+          <FadeUp>
+            <p className="mb-4 text-[10px] uppercase tracking-[0.42em] text-primary/78">Атмосфера</p>
+            <h2 className="text-3xl leading-tight sm:text-5xl">О нашем Lounge</h2>
+          </FadeUp>
+          <FadeUp delay={0.12}>
+            <div className="mb-6 mt-5 w-20 gold-divider" />
+          </FadeUp>
+          <FadeUp delay={0.2}>
+            <p className="mb-5 text-base leading-relaxed text-foreground/72 sm:text-lg">
+              Bobsonm Lounge — пространство, где стильный интерьер, мягкий свет и музыка собирают вечер в цельную сцену.
+            </p>
+            <p className="text-base leading-relaxed text-foreground/62 sm:text-lg">
+              Здесь удобно встречаться с друзьями, уходить в длинный разговор и доверять вечер команде, которая держит уровень сервиса без лишнего шума.
+            </p>
+          </FadeUp>
+
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-3">
+            {[
+              { icon: Clock, label: "Режим", value: "ежедневно 13:00–01:00" },
+              { icon: Music, label: "Сценарий", value: "мафия по расписанию" },
+              { icon: Users, label: "Формат", value: "уютные зоны до 100 гостей" },
+            ].map((item, index) => (
+              <FadeUp key={item.label} delay={0.28 + index * 0.08}>
+                <div className="glass-panel rounded-lg p-4">
+                  <item.icon className="mb-3 text-primary" size={22} />
+                  <p className="text-[10px] uppercase tracking-[0.32em] text-primary/75">{item.label}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-foreground/72">{item.value}</p>
+                </div>
+              </FadeUp>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default Lounge;
