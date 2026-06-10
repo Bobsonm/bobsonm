@@ -212,10 +212,10 @@ const Index = () => {
   }, [heroInView]);
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
-    const progressSpan = viewportTier === "mobile" ? 0.68 : viewportTier === "tablet" ? 0.72 : 0.78;
+    const progressSpan = viewportTier === "mobile" ? 0.88 : viewportTier === "tablet" ? 0.9 : 0.92;
     const normalized = Math.min(value / progressSpan, 1);
     heroProgress.current = normalized;
-    const nextStep = Math.min(heroSteps.length - 1, Math.floor(normalized * heroSteps.length + 0.08));
+    const nextStep = Math.min(heroSteps.length - 1, Math.floor(normalized * heroSteps.length + 0.12));
     setHeroStepIndex((prev) => (prev !== nextStep ? nextStep : prev));
   });
 
