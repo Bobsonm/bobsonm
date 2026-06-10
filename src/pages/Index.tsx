@@ -231,7 +231,7 @@ const Index = () => {
 
   const isMobile = viewportTier === "mobile";
   const isTablet = viewportTier === "tablet";
-  const heroSectionHeight = isMobile ? "165svh" : isTablet ? "185svh" : "220svh";
+  const heroSectionHeight = isMobile ? "240svh" : isTablet ? "265svh" : "300svh";
   const stickyHeight = isMobile ? "calc(100svh - 4rem)" : "calc(100svh - 5rem)";
   const activeIndicator = indicatorItems.find((item) => item.id === activeBlock) ?? indicatorItems[0];
   const activeIndicatorIndex = Math.max(
@@ -244,14 +244,6 @@ const Index = () => {
       <motion.div
         className="fixed left-0 right-0 top-16 z-40 h-px origin-left bg-primary/80 md:top-20"
         style={{ scaleX: pageProgressScaleX }}
-      />
-
-      <ScrollProgressHUD
-        activeId={activeBlock}
-        currentItem={activeIndicator}
-        currentIndex={activeIndicatorIndex}
-        heroInView={heroInView}
-        heroStepIndex={heroStepIndex}
       />
 
       <section
@@ -323,30 +315,6 @@ const Index = () => {
                 </motion.p>
 
                 <motion.div
-                  initial={{ opacity: 0, y: 18 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 1, delay: 0.7 }}
-                  className="glass-panel mx-auto mb-6 w-full max-w-xl rounded-lg p-4 text-left md:mx-0"
-                >
-                  <p className="mb-2 text-[10px] uppercase tracking-[0.35em] text-primary/70">
-                    Сейчас на экране
-                  </p>
-                  <div className="flex items-end justify-between gap-4">
-                    <div>
-                      <p className="font-serif text-2xl text-foreground sm:text-3xl">
-                        {heroSteps[heroStepIndex].label}
-                      </p>
-                      <p className="mt-1 max-w-md text-sm leading-relaxed text-foreground/65 sm:text-base">
-                        {heroSteps[heroStepIndex].description}
-                      </p>
-                    </div>
-                    <p className="hidden text-[10px] uppercase tracking-[0.3em] text-primary/70 sm:block">
-                      0{heroStepIndex + 1} / 04
-                    </p>
-                  </div>
-                </motion.div>
-
-                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, delay: 0.9 }}
@@ -360,9 +328,6 @@ const Index = () => {
                     <span className="text-[10px] uppercase tracking-[0.35em]">Исследовать</span>
                     <ArrowDown size={14} className="transition-transform group-hover:translate-y-1" />
                   </Button>
-                  <p className="max-w-sm text-xs uppercase tracking-[0.28em] text-foreground/45">
-                    Скролл меняет сцену, а следующий блок появляется без пустого экрана.
-                  </p>
                 </motion.div>
               </motion.div>
 
@@ -388,6 +353,7 @@ const Index = () => {
                   <p className="font-serif text-2xl italic text-foreground/90 sm:text-3xl">
                     {heroSteps[heroStepIndex].label}
                   </p>
+                  <p className="mt-1 text-sm text-foreground/60">{heroSteps[heroStepIndex].description}</p>
                 </motion.div>
               </motion.div>
             </div>
@@ -472,78 +438,6 @@ const Index = () => {
     </div>
   );
 };
-
-function ScrollProgressHUD({
-  activeId,
-  currentItem,
-  currentIndex,
-  heroInView,
-  heroStepIndex,
-}: {
-  activeId: string;
-  currentItem: { id: string; label: string; hint: string };
-  currentIndex: number;
-  heroInView: boolean;
-  heroStepIndex: number;
-}) {
-  return (
-    <>
-      <div className="fixed right-5 top-1/2 z-40 hidden -translate-y-1/2 xl:block">
-        <div className="glass-panel rounded-lg px-4 py-4">
-          <p className="mb-4 text-[10px] uppercase tracking-[0.35em] text-primary/75">Навигация</p>
-          <div className="space-y-3">
-            {indicatorItems.map((item, index) => {
-              const isActive = item.id === activeId;
-              return (
-                <div key={item.id} className="flex items-start gap-3">
-                  <div className="mt-1.5 flex flex-col items-center gap-2">
-                    <span
-                      className={`h-2 w-2 rounded-full transition-all duration-500 ${
-                        isActive ? "bg-primary shadow-[0_0_18px_hsl(var(--primary)/0.7)]" : "bg-primary/25"
-                      }`}
-                    />
-                    {index < indicatorItems.length - 1 && <span className="h-7 w-px bg-border" />}
-                  </div>
-                  <div>
-                    <p className={`text-sm transition-colors ${isActive ? "text-foreground" : "text-foreground/48"}`}>
-                      {item.label}
-                    </p>
-                    <p className="text-[10px] uppercase tracking-[0.22em] text-foreground/35">{item.hint}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </div>
-
-      <div className="fixed inset-x-3 bottom-3 z-40 xl:hidden">
-        <div className="glass-panel flex items-center gap-3 rounded-full py-2 pl-4 pr-2">
-          <div className="min-w-0 flex-1">
-            <p className="truncate text-[9px] uppercase tracking-[0.3em] text-primary/75">
-              {currentItem.hint}
-            </p>
-            <p className="truncate text-sm font-medium text-foreground">{currentItem.label}</p>
-          </div>
-          <div className="flex shrink-0 items-center gap-2">
-            <p className="text-[10px] uppercase tracking-[0.22em] text-primary/70">
-              {String(currentIndex + 1).padStart(2, "0")}/{String(indicatorItems.length).padStart(2, "0")}
-            </p>
-            <div className="h-8 w-8 shrink-0 rounded-full bg-secondary/60 p-[3px]">
-              <div
-                className="h-full rounded-full bg-gradient-to-br from-primary via-primary/70 to-primary/30 transition-all duration-500"
-                style={{
-                  clipPath: `inset(${100 - ((currentIndex + 1) / indicatorItems.length) * 100}% 0 0 0)`,
-                }}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </>
-  );
-}
 
 function SectionRow({
   section,
