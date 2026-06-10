@@ -4,7 +4,7 @@ import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
 import { YandexMap } from "@/components/YandexMap";
-import { FoodMenuCarousel } from "@/components/FoodMenuCarousel";
+import { BookFlipMenu } from "@/components/BookFlipMenu";
 import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Phone, Calendar, Clock, MapPin, Music, Users, ExternalLink } from "lucide-react";
@@ -298,31 +298,12 @@ const Lounge = () => {
           </AnimatedSection>
           
           <div className="max-w-5xl mx-auto">
-            <Tabs defaultValue="food" className="w-full">
-              <TabsList className="w-full bg-bobsonm-navy/20 p-1 mb-6">
-                <TabsTrigger
-                  value="food"
-                  className="data-[state=active]:bg-bobsonm-navy data-[state=active]:text-white"
-                >
-                  Еда
-                </TabsTrigger>
-                
-                <TabsTrigger
-                  value="bar-hookah"
-                  className="data-[state=active]:bg-bobsonm-navy data-[state=active]:text-white"
-                >
-                  Бар и Кальян
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="food" className="mt-6">
-                <FoodMenuCarousel images={foodMenuImages} />
-              </TabsContent>
-              
-              <TabsContent value="bar-hookah" className="mt-6">
-                <FoodMenuCarousel images={barHookahMenuImages} />
-              </TabsContent>
-            </Tabs>
+            <BookFlipMenu
+              tabs={[
+                { value: "food", label: "Еда", images: foodMenuImages.map((i) => i.src) },
+                { value: "bar-hookah", label: "Бар и Кальян", images: barHookahMenuImages.map((i) => i.src) },
+              ]}
+            />
           </div>
         </div>
       </section>
