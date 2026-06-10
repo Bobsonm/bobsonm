@@ -96,7 +96,7 @@ const Index = () => {
   return (
     <div className="relative bg-background text-foreground overflow-x-hidden grain">
       {/* HERO — tall scrub container, sticky canvas */}
-      <section ref={heroRef} className="relative h-[320vh] w-full">
+      <section ref={heroRef} className="relative h-[180vh] w-full">
         <div className="sticky top-0 h-[100svh] w-full overflow-hidden">
           <div className="absolute inset-0 z-0">
             <Hero3D progress={heroProgress} />
