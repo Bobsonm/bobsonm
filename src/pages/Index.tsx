@@ -517,48 +517,30 @@ function ScrollProgressHUD({
         </div>
       </div>
 
-      <div className="fixed inset-x-4 bottom-4 z-40 xl:hidden">
-        <div className="glass-panel rounded-lg px-4 py-3">
-          <div className="mb-3 flex items-start justify-between gap-4">
-            <div>
-              <p className="text-[10px] uppercase tracking-[0.32em] text-primary/75">Активный блок</p>
-              <p className="mt-1 font-serif text-2xl leading-none text-foreground">{currentItem.label}</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-foreground/45">{currentItem.hint}</p>
-            </div>
-            <p className="pt-1 text-[10px] uppercase tracking-[0.25em] text-primary/75">
-              {String(currentIndex + 1).padStart(2, "0")} / {String(indicatorItems.length).padStart(2, "0")}
+      <div className="fixed inset-x-3 bottom-3 z-40 xl:hidden">
+        <div className="glass-panel flex items-center gap-3 rounded-full py-2 pl-4 pr-2">
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-[9px] uppercase tracking-[0.3em] text-primary/75">
+              {currentItem.hint}
             </p>
+            <p className="truncate text-sm font-medium text-foreground">{currentItem.label}</p>
           </div>
-
-          {heroInView ? (
-            <div className="grid grid-cols-4 gap-2">
-              {heroSteps.map((step, index) => {
-                const isActive = heroStepIndex === index;
-                return (
-                  <div
-                    key={step.id}
-                    className={`rounded-md border px-2 py-2 text-center transition-all duration-500 ${
-                      isActive
-                        ? "border-primary/40 bg-primary/10 text-foreground"
-                        : "border-border bg-background/40 text-foreground/45"
-                    }`}
-                  >
-                    <p className="text-[10px] uppercase tracking-[0.15em]">0{index + 1}</p>
-                    <p className="mt-1 text-[11px] uppercase tracking-[0.08em]">{step.label}</p>
-                  </div>
-                );
-              })}
-            </div>
-          ) : (
-            <div className="h-1 overflow-hidden rounded-full bg-secondary">
+          <div className="flex shrink-0 items-center gap-2">
+            <p className="text-[10px] uppercase tracking-[0.22em] text-primary/70">
+              {String(currentIndex + 1).padStart(2, "0")}/{String(indicatorItems.length).padStart(2, "0")}
+            </p>
+            <div className="h-8 w-8 shrink-0 rounded-full bg-secondary/60 p-[3px]">
               <div
-                className="h-full rounded-full bg-primary transition-all duration-500"
-                style={{ width: `${((currentIndex + 1) / indicatorItems.length) * 100}%` }}
+                className="h-full rounded-full bg-gradient-to-br from-primary via-primary/70 to-primary/30 transition-all duration-500"
+                style={{
+                  clipPath: `inset(${100 - ((currentIndex + 1) / indicatorItems.length) * 100}% 0 0 0)`,
+                }}
               />
             </div>
-          )}
+          </div>
         </div>
       </div>
+
     </>
   );
 }
