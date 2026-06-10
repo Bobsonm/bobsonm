@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { AnimatedSection } from "@/components/AnimatedSection";
 import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
-import { MenuScans } from "@/components/MenuScans";
+import { BookFlipMenu } from "@/components/BookFlipMenu";
 import { YandexMap } from "@/components/YandexMap";
 import { VipRoomCarousel } from "@/components/VipRoomCarousel";
 import { Separator } from "@/components/ui/separator";
@@ -355,7 +355,7 @@ const Billiards = () => {
         </AnimatedSection>
         
         <div className="max-w-5xl mx-auto">
-          <MenuScans tabs={menuScans} />
+          <BookFlipMenu tabs={menuScans} />
         </div>
       </section>
       
