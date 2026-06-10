@@ -247,7 +247,7 @@ const Index = () => {
 
   const isMobile = viewportTier === "mobile";
   const isTablet = viewportTier === "tablet";
-  const heroSectionHeight = isMobile ? "185svh" : isTablet ? "210svh" : "235svh";
+  const heroSectionHeight = isMobile ? "150svh" : isTablet ? "165svh" : "180svh";
   const stickyHeight = isMobile ? "calc(100svh - 4rem)" : "calc(100svh - 5rem)";
   return (
     <div className="relative overflow-x-hidden bg-background text-foreground grain">
