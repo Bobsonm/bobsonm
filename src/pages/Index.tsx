@@ -125,6 +125,7 @@ const Index = () => {
   const [viewportTier, setViewportTier] = useState<ViewportTier>("desktop");
   const [heroStepIndex, setHeroStepIndex] = useState(0);
   const [heroInView, setHeroInView] = useState(true);
+  const [heroPinned, setHeroPinned] = useState(true);
   const [activeBlock, setActiveBlock] = useState<string>(heroSteps[0].id);
 
   const { scrollYProgress } = useScroll({
@@ -174,7 +175,7 @@ const Index = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => setHeroInView(entry.isIntersecting),
-      { threshold: 0.18 },
+      { threshold: 0 },
     );
 
     observer.observe(node);
@@ -211,10 +212,32 @@ const Index = () => {
   }, [heroInView]);
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
-    heroProgress.current = value;
-    const nextStep = Math.min(heroSteps.length - 1, Math.floor(value * heroSteps.length + 0.08));
+    const progressSpan = viewportTier === "mobile" ? 0.68 : viewportTier === "tablet" ? 0.72 : 0.78;
+    const normalized = Math.min(value / progressSpan, 1);
+    heroProgress.current = normalized;
+    const nextStep = Math.min(heroSteps.length - 1, Math.floor(normalized * heroSteps.length + 0.08));
     setHeroStepIndex((prev) => (prev !== nextStep ? nextStep : prev));
   });
+
+  useEffect(() => {
+    const updatePinnedState = () => {
+      const node = heroRef.current;
+      if (!node) return;
+
+      const rect = node.getBoundingClientRect();
+      const navOffset = window.innerWidth < 768 ? 64 : 80;
+      const pinThreshold = window.innerHeight * (window.innerWidth < 768 ? 0.46 : 0.58);
+      setHeroPinned(rect.top <= navOffset && rect.bottom > pinThreshold);
+    };
+
+    updatePinnedState();
+    window.addEventListener("scroll", updatePinnedState, { passive: true });
+    window.addEventListener("resize", updatePinnedState);
+    return () => {
+      window.removeEventListener("scroll", updatePinnedState);
+      window.removeEventListener("resize", updatePinnedState);
+    };
+  }, [viewportTier]);
 
   useEffect(() => {
     if (!heroInView) return;
@@ -224,7 +247,7 @@ const Index = () => {
 
   const isMobile = viewportTier === "mobile";
   const isTablet = viewportTier === "tablet";
-  const heroSectionHeight = isMobile ? "240svh" : isTablet ? "265svh" : "300svh";
+  const heroSectionHeight = isMobile ? "185svh" : isTablet ? "210svh" : "235svh";
   const stickyHeight = isMobile ? "calc(100svh - 4rem)" : "calc(100svh - 5rem)";
   return (
     <div className="relative overflow-x-hidden bg-background text-foreground grain">
@@ -248,7 +271,23 @@ const Index = () => {
           />
         </div>
 
-        <div className="sticky" style={{ top: isMobile ? "4rem" : "5rem", height: stickyHeight }}>
+        <div
+          className="left-0 right-0"
+          style={
+            heroPinned
+              ? {
+                  position: "fixed",
+                  top: isMobile ? "4rem" : "5rem",
+                  height: stickyHeight,
+                  zIndex: 20,
+                }
+              : {
+                  position: "absolute",
+                  bottom: 0,
+                  height: stickyHeight,
+                }
+          }
+        >
           <div className="relative h-full overflow-hidden">
             <div
               className="absolute inset-0 pointer-events-none"
