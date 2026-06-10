@@ -13,25 +13,25 @@ const Gastrobar = () => {
 
   const features = [
     {
-      icon: <UtensilsCrossed size={24} className="text-bobsonm-gold" />,
+      icon: <UtensilsCrossed size={24} className="text-primary" />,
       title: "Авторская кухня",
       description:
         "Сезонное меню от шеф-повара: яркие вкусы, локальные продукты и подача, которая удивляет.",
     },
     {
-      icon: <Wine size={24} className="text-bobsonm-gold" />,
+      icon: <Wine size={24} className="text-primary" />,
       title: "Винная и барная карта",
       description:
         "Авторские коктейли, классика и тщательно подобранные вина — для каждого блюда и настроения.",
     },
     {
-      icon: <Sparkles size={24} className="text-bobsonm-gold" />,
+      icon: <Sparkles size={24} className="text-primary" />,
       title: "Атмосфера вечера",
       description:
         "Тёплый свет, живая музыка и уютные посадки — идеально для свиданий и встреч с друзьями.",
     },
     {
-      icon: <Users size={24} className="text-bobsonm-gold" />,
+      icon: <Users size={24} className="text-primary" />,
       title: "События и компании",
       description:
         "Принимаем большие компании, организуем банкеты, дни рождения и корпоративные мероприятия.",

@@ -1,13 +1,12 @@
 
 import { useEffect } from "react";
-import { ContactButton } from "@/components/ContactButton";
 import { Gallery } from "@/components/Gallery";
 import { YandexMap } from "@/components/YandexMap";
 import { FadeUp, Reveal } from "@/components/ParallaxSection";
 import { VenueHero } from "@/components/VenueHero";
 import { Separator } from "@/components/ui/separator";
 import { 
-  Clock, MapPin, Phone, Star, Calendar, User, 
+  Clock, MapPin, Phone, Star, User, 
   MessageCircle, Heart, Users, Shield
 } from "lucide-react";
 
@@ -60,22 +59,22 @@ const Mafia = () => {
   // Club benefits
   const benefits = [
     {
-      icon: <Heart size={24} className="text-bobsonm-gold" />,
+      icon: <Heart size={24} className="text-primary" />,
       title: "Уют и атмосфера",
       description: "Стильный лаунж с мягким светом, удобными диванами и дружелюбной атмосферой — идеальное место, чтобы расслабиться и погрузиться в игру."
     },
     {
-      icon: <Star size={24} className="text-bobsonm-gold" />,
+      icon: <Star size={24} className="text-primary" />,
       title: "Welcome drink и бонусы",
       description: "Каждому игроку — коктейль \"Последний шанс\" на старте. Часто угощаем клубникой в шоколаде, устраиваем тематические вечера и награждаем активных игроков призами."
     },
     {
-      icon: <Shield size={24} className="text-bobsonm-gold" />,
+      icon: <Shield size={24} className="text-primary" />,
       title: "Интеллект и интрига",
       description: "Это не просто игра, а психологическое сражение. Здесь побеждают не самые громкие, а самые умные и внимательные."
     },
     {
-      icon: <Users size={24} className="text-bobsonm-gold" />,
+      icon: <Users size={24} className="text-primary" />,
       title: "Живая комьюнити",
       description: "Наши гости — это люди, которые возвращаются снова и снова. Здесь можно найти как сильных соперников, так и новых друзей."
     }
