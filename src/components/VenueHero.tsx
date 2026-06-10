@@ -37,8 +37,8 @@ export function VenueHero({
         }}
       />
 
-      <div className="bobsonm-container relative grid min-h-[calc(100svh-4.5rem)] items-end gap-8 md:min-h-[calc(100svh-5rem)] md:grid-cols-[minmax(0,0.92fr)_minmax(320px,0.88fr)] md:gap-12">
-        <div className="order-2 flex max-w-2xl flex-col justify-end pb-2 md:order-1 md:pb-8">
+      <div className="bobsonm-container relative grid items-center gap-8 py-8 md:grid-cols-[minmax(0,0.92fr)_minmax(320px,0.88fr)] md:gap-12 md:py-12">
+        <div className="order-2 flex max-w-2xl flex-col justify-center md:order-1">
           <FadeUp>
             <p className="mb-4 text-[10px] uppercase tracking-[0.42em] text-primary/80">
               {eyebrow}
