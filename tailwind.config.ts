@@ -58,13 +58,16 @@ export default {
           foreground: "hsl(var(--card-foreground))"
         },
         bobsonm: {
-          black: "#0A0A0A",
-          darkBlue: "#0F1A2A",
-          navy: "#15274B",
-          gold: "#D4AF37",
-          goldLight: "#F2D675",
-          smokeBlack: "#121212",
-          charcoal: "#1E1E1E",
+          black: "#05060F",
+          darkBlue: "#0A0A1A",
+          navy: "#141432",
+          deep: "#1E1E5A",
+          indigo: "#4F46E5",
+          glow: "#7C75FF",
+          gold: "#4F46E5",
+          goldLight: "#7C75FF",
+          smokeBlack: "#0A0A1A",
+          charcoal: "#141432",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -78,8 +81,8 @@ export default {
         }
       },
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
-        serif: ["Playfair Display", "Georgia", "serif"],
+        sans: ["Work Sans", "system-ui", "sans-serif"],
+        serif: ["Instrument Serif", "Georgia", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
