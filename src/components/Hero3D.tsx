@@ -82,9 +82,11 @@ export function Hero3D({ progress }: Hero3DProps) {
     const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
     const easeInOut = (x: number) =>
       x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
-    const sceneWeight = (p: number, center: number, half = 0.18) => {
+    const sceneWeight = (p: number, center: number, half = 0.34) => {
       const d = Math.abs(p - center);
-      return clamp(1 - d / half);
+      const raw = clamp(1 - d / half);
+      // smoothstep for buttery crossfades
+      return raw * raw * (3 - 2 * raw);
     };
 
     const drawBall = (
