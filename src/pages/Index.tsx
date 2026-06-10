@@ -212,10 +212,10 @@ const Index = () => {
   }, [heroInView]);
 
   useMotionValueEvent(scrollYProgress, "change", (value) => {
-    const progressSpan = viewportTier === "mobile" ? 0.68 : viewportTier === "tablet" ? 0.72 : 0.78;
+    const progressSpan = viewportTier === "mobile" ? 0.88 : viewportTier === "tablet" ? 0.9 : 0.92;
     const normalized = Math.min(value / progressSpan, 1);
     heroProgress.current = normalized;
-    const nextStep = Math.min(heroSteps.length - 1, Math.floor(normalized * heroSteps.length + 0.08));
+    const nextStep = Math.min(heroSteps.length - 1, Math.floor(normalized * heroSteps.length + 0.12));
     setHeroStepIndex((prev) => (prev !== nextStep ? nextStep : prev));
   });
 
@@ -247,7 +247,7 @@ const Index = () => {
 
   const isMobile = viewportTier === "mobile";
   const isTablet = viewportTier === "tablet";
-  const heroSectionHeight = isMobile ? "185svh" : isTablet ? "210svh" : "235svh";
+  const heroSectionHeight = isMobile ? "150svh" : isTablet ? "165svh" : "180svh";
   const stickyHeight = isMobile ? "calc(100svh - 4rem)" : "calc(100svh - 5rem)";
   return (
     <div className="relative overflow-x-hidden bg-background text-foreground grain">

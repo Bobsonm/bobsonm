@@ -82,9 +82,11 @@ export function Hero3D({ progress }: Hero3DProps) {
     const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v));
     const easeInOut = (x: number) =>
       x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2;
-    const sceneWeight = (p: number, center: number, half = 0.18) => {
+    const sceneWeight = (p: number, center: number, half = 0.34) => {
       const d = Math.abs(p - center);
-      return clamp(1 - d / half);
+      const raw = clamp(1 - d / half);
+      // smoothstep for buttery crossfades
+      return raw * raw * (3 - 2 * raw);
     };
 
     const drawBall = (
@@ -313,11 +315,11 @@ export function Hero3D({ progress }: Hero3DProps) {
       const cy = h * 0.5;
       const baseR = Math.min(w, h) * 0.18;
 
-      // Scene weights
-      const wBall = sceneWeight(p, 0.0, 0.22);
-      const wHookah = sceneWeight(p, 0.33, 0.22);
-      const wCards = sceneWeight(p, 0.66, 0.22);
-      const wDish = sceneWeight(p, 1.0, 0.25);
+      // Scene weights — wider, overlapping windows for buttery transitions
+      const wBall = sceneWeight(p, 0.05, 0.36);
+      const wHookah = sceneWeight(p, 0.36, 0.34);
+      const wCards = sceneWeight(p, 0.66, 0.34);
+      const wDish = sceneWeight(p, 0.96, 0.36);
 
       // Slight vertical drift driven by progress
       const drift = easeInOut(p) * -40;
