@@ -115,13 +115,6 @@ const venues = [
   },
 ] as const;
 
-const indicatorItems = [
-  ...heroSteps.map((step) => ({ id: step.id, label: step.label, hint: step.hint })),
-  { id: "intro", label: "Философия", hint: "Общий ритм проекта" },
-  ...sections.map((section) => ({ id: section.id, label: section.shortTitle, hint: section.tag })),
-  { id: "venues", label: "Локации", hint: "Адреса и контакты" },
-] as const;
-
 type ViewportTier = "mobile" | "tablet" | "desktop";
 
 const Index = () => {
@@ -233,12 +226,6 @@ const Index = () => {
   const isTablet = viewportTier === "tablet";
   const heroSectionHeight = isMobile ? "240svh" : isTablet ? "265svh" : "300svh";
   const stickyHeight = isMobile ? "calc(100svh - 4rem)" : "calc(100svh - 5rem)";
-  const activeIndicator = indicatorItems.find((item) => item.id === activeBlock) ?? indicatorItems[0];
-  const activeIndicatorIndex = Math.max(
-    0,
-    indicatorItems.findIndex((item) => item.id === activeIndicator.id),
-  );
-
   return (
     <div className="relative overflow-x-hidden bg-background text-foreground grain">
       <motion.div
@@ -248,7 +235,7 @@ const Index = () => {
 
       <section
         ref={heroRef}
-        className="relative isolate w-full overflow-clip"
+        className="relative isolate w-full"
         style={{ height: heroSectionHeight }}
       >
         <div className="absolute inset-0">
