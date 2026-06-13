@@ -5,6 +5,21 @@ import { VenueHero } from "@/components/VenueHero";
 import { YandexMap } from "@/components/YandexMap";
 import { Separator } from "@/components/ui/separator";
 import { Clock, MapPin, Phone, UtensilsCrossed, Wine, Sparkles, Users } from "lucide-react";
+import g1 from "@/assets/gastrobar/gastrobar-1.png.asset.json";
+import g2 from "@/assets/gastrobar/gastrobar-2.png.asset.json";
+import g3 from "@/assets/gastrobar/gastrobar-3.png.asset.json";
+import g4 from "@/assets/gastrobar/gastrobar-4.png.asset.json";
+import g5 from "@/assets/gastrobar/gastrobar-5.png.asset.json";
+import g6 from "@/assets/gastrobar/gastrobar-6.png.asset.json";
+
+const gallery = [
+  { src: g1.url, alt: "Зал гастробара Bobsonm" },
+  { src: g2.url, alt: "Уютная зона с каллиграфией" },
+  { src: g3.url, alt: "VIP-зона с большим экраном" },
+  { src: g4.url, alt: "Основной зал, синие диваны" },
+  { src: g5.url, alt: "Полукруглые диваны и столики" },
+  { src: g6.url, alt: "Bobsonm Lounge интерьер" },
+];
 
 const Gastrobar = () => {
   useEffect(() => {
