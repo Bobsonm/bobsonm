@@ -127,6 +127,26 @@ const Gastrobar = () => {
         </div>
       </section>
 
+      {/* Menu */}
+      <section id="menu" className="py-20">
+        <div className="bobsonm-container px-4">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">Меню</h2>
+            <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
+              Авторская кухня, барная и кальянная карта
+            </p>
+          </FadeUp>
+          <div className="max-w-5xl mx-auto">
+            <BookFlipMenu
+              tabs={[
+                { value: "food", label: "Еда", images: foodMenuPages },
+                { value: "bar-hookah", label: "Кальян и бар", images: hookahMenuPages },
+              ]}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Gallery */}
       <section className="py-20 bg-gradient-to-b from-background to-secondary/10">
         <div className="bobsonm-container px-4">
