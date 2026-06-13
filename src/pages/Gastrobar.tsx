@@ -3,6 +3,8 @@ import { ContactButton } from "@/components/ContactButton";
 import { FadeUp, Reveal } from "@/components/ParallaxSection";
 import { VenueHero } from "@/components/VenueHero";
 import { YandexMap } from "@/components/YandexMap";
+import { BookFlipMenu } from "@/components/BookFlipMenu";
+import { foodMenuPages, hookahMenuPages } from "@/assets/menu";
 import { Separator } from "@/components/ui/separator";
 import { Clock, MapPin, Phone, UtensilsCrossed, Wine, Sparkles, Users } from "lucide-react";
 import g1 from "@/assets/gastrobar/gastrobar-1.png.asset.json";
