@@ -140,33 +140,35 @@ export function BookFlipMenu({ tabs, className }: BookFlipMenuProps) {
               <ZoomIn size={15} />
             </button>
           </div>
-        </div>
 
-        {/* controls */}
-        <div className="flex items-center justify-between mt-6">
+          {/* mid-page arrows */}
           <button
             onClick={prev}
             disabled={page === 0}
-            className="h-11 w-11 rounded-full border border-primary/40 text-primary inline-flex items-center justify-center hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-11 sm:w-11 rounded-full border border-primary/40 text-primary inline-flex items-center justify-center bg-black/40 backdrop-blur-sm hover:bg-primary/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             aria-label="Назад"
           >
             <ChevronLeft size={18} />
           </button>
-          <div className="text-xs tracking-[0.3em] uppercase text-foreground/60">
-            {String(page + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
-          </div>
           <button
             onClick={next}
             disabled={page >= images.length - 1}
-            className="h-11 w-11 rounded-full border border-primary/40 text-primary inline-flex items-center justify-center hover:bg-primary/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 sm:h-11 sm:w-11 rounded-full border border-primary/40 text-primary inline-flex items-center justify-center bg-black/40 backdrop-blur-sm hover:bg-primary/20 disabled:opacity-30 disabled:cursor-not-allowed transition-all"
             aria-label="Далее"
           >
             <ChevronRight size={18} />
           </button>
         </div>
 
+        {/* page counter */}
+        <div className="flex justify-center mt-4">
+          <div className="text-xs tracking-[0.3em] uppercase text-foreground/60">
+            {String(page + 1).padStart(2, "0")} / {String(images.length).padStart(2, "0")}
+          </div>
+        </div>
+
         {/* thumbnail strip */}
-        <div className="mt-6 -mx-2 px-2 overflow-x-auto scrollbar-thin">
+        <div className="mt-5 -mx-2 px-2 overflow-x-auto scrollbar-thin">
           <div className="flex gap-2 pb-2 min-w-min justify-start sm:justify-center">
             {images.map((src, i) => (
               <button
