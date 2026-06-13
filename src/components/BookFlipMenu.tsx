@@ -165,19 +165,25 @@ export function BookFlipMenu({ tabs, className }: BookFlipMenuProps) {
           </button>
         </div>
 
-        {/* dots */}
-        <div className="flex justify-center gap-1.5 mt-4">
-          {images.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setPage(i)}
-              className={cn(
-                "h-1.5 rounded-full transition-all",
-                i === page ? "w-6 bg-primary" : "w-1.5 bg-foreground/20 hover:bg-foreground/40",
-              )}
-              aria-label={`Страница ${i + 1}`}
-            />
-          ))}
+        {/* thumbnail strip */}
+        <div className="mt-6 -mx-2 px-2 overflow-x-auto scrollbar-thin">
+          <div className="flex gap-2 pb-2 min-w-min justify-start sm:justify-center">
+            {images.map((src, i) => (
+              <button
+                key={i}
+                onClick={() => setPage(i)}
+                className={cn(
+                  "relative shrink-0 h-16 w-12 sm:h-20 sm:w-16 overflow-hidden rounded border transition-all",
+                  i === page
+                    ? "border-primary ring-1 ring-primary shadow-[0_0_12px_-2px_hsl(var(--primary)/0.5)]"
+                    : "border-border/60 opacity-60 hover:opacity-100 hover:border-primary/50",
+                )}
+                aria-label={`Страница ${i + 1}`}
+              >
+                <img src={src} alt="" loading="lazy" className="h-full w-full object-cover" />
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 
