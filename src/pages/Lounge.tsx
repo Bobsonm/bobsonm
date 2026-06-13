@@ -118,8 +118,8 @@ const Lounge = () => {
           <div className="max-w-5xl mx-auto">
             <BookFlipMenu
               tabs={[
-                { value: "food", label: "Еда", images: foodMenuImages.map((i) => i.src) },
-                { value: "bar-hookah", label: "Бар и Кальян", images: barHookahMenuImages.map((i) => i.src) },
+                { value: "food", label: "Еда", images: foodMenuPages },
+                { value: "bar-hookah", label: "Кальян и бар", images: hookahMenuPages },
               ]}
             />
           </div>
