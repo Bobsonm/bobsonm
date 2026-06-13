@@ -125,6 +125,40 @@ const Gastrobar = () => {
         </div>
       </section>
 
+      {/* Gallery */}
+      <section className="py-20 bg-gradient-to-b from-background to-secondary/10">
+        <div className="bobsonm-container px-4">
+          <FadeUp>
+            <h2 className="text-center text-3xl sm:text-4xl md:text-5xl">
+              Атмосфера
+            </h2>
+            <p className="mx-auto mt-3 mb-12 max-w-2xl text-center text-foreground/68">
+              Загляните в наши залы — насыщенный синий бархат, тёплый свет и
+              авторские детали интерьера.
+            </p>
+          </FadeUp>
+
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((img, i) => (
+              <Reveal key={i}>
+                <div className="group relative overflow-hidden rounded-2xl border border-primary/12 bg-card">
+                  <div className="aspect-[4/5] overflow-hidden">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  </div>
+                  <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
       {/* Contacts */}
       <section className="py-20 bobsonm-container px-4">
         <FadeUp>
