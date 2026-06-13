@@ -60,8 +60,8 @@ const Gastrobar = () => {
         title="Bobsonm"
         accent="Гастробар"
         description="Авторская кухня, винная карта и вечерний свет — пространство для ужина, встреч и красивой подачи без лишнего шума."
-        imageSrc="/lovable-uploads/adb9981e-55c4-4f48-8d78-0eae2fb0fe09.png"
-        imageAlt="Bobsonm Гастробар"
+        imageSrc={g1.url}
+        imageAlt="Bobsonm Гастробар — основной зал"
         actions={<ContactButton size="lg" phoneNumber="+7 (967) 131-17-83">Позвонить и забронировать</ContactButton>}
         stats={[
           { label: "Формат", value: "авторская кухня" },
