@@ -8,6 +8,7 @@ import { BookFlipMenu } from "@/components/BookFlipMenu";
 import { FadeUp, Reveal } from "@/components/ParallaxSection";
 import { VenueHero } from "@/components/VenueHero";
 import { Separator } from "@/components/ui/separator";
+import { foodMenuPages, hookahMenuPages } from "@/assets/menu";
 import { ArrowRight, Calendar, Clock, ExternalLink, Flame, MapPin, Music, Phone, Users } from "lucide-react";
 
 const Lounge = () => {
