@@ -87,7 +87,7 @@ const Lounge = () => {
         imageAlt="Интерьер Bobsonm Lounge"
         actions={
           <>
-            <ContactButton size="lg" phoneNumber="+7 (901) 417-22-93">
+            <ContactButton size="lg" phoneNumber="+7 (903) 662-37-16">
               Позвонить и забронировать
             </ContactButton>
             <a href="#menu" className="group inline-flex items-center gap-3 border-b border-primary/30 pb-2 text-primary transition-all hover:border-primary">
@@ -192,8 +192,8 @@ const Lounge = () => {
                 <Phone size={24} className="mr-4 text-primary" />
                 <div>
                   <h3 className="font-medium text-foreground">Телефон для бронирования</h3>
-                  <a href="tel:+79014172293" className="text-xl text-gold-shine transition-colors hover:opacity-80">
-                    +7 (901) 417-22-93
+                  <a href="tel:+79036623716" className="text-xl text-gold-shine transition-colors hover:opacity-80">
+                    +7 (903) 662-37-16
                   </a>
                 </div>
               </div>
@@ -232,7 +232,7 @@ const Lounge = () => {
               </div>
               
               <div className="mt-8 text-center">
-                <ContactButton size="lg" variant="primary" phoneNumber="+7 (901) 417-22-93" className="w-full">
+                <ContactButton size="lg" variant="primary" phoneNumber="+7 (903) 662-37-16" className="w-full">
                   Забронировать стол
                 </ContactButton>
               </div>
