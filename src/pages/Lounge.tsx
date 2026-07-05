@@ -72,7 +72,7 @@ const Lounge = () => {
     link: "https://app.samosale.ru/BobsonmLounge"
   }, {
     title: "День рождения",
-    description: "В день рождения и 3 дня после -10% на весь счет",
+    description: "В день рождения и 3 дня после -20% на весь счет",
     period: "В день рождения и 3 дня после"
   }];
   
