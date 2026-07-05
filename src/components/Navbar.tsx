@@ -34,7 +34,7 @@ export function Navbar() {
   const getPhoneNumber = () => {
     switch (location.pathname) {
       case '/lounge':
-        return "+7 (901) 417-22-93";
+        return "+7 (903) 662-37-16";
       case '/mafia':
         return "+7 (967) 131-17-83";
       case '/gastrobar':

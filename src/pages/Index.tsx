@@ -98,7 +98,7 @@ const venues = [
   {
     name: "Bobsonm Lounge",
     address: "Москва, Международная улица 15А",
-    phone: "+7 (901) 417-22-93",
+    phone: "+7 (903) 662-37-16",
     linkTo: "/lounge",
   },
   {
